@@ -407,8 +407,8 @@ static NSString *const CameraSettingSnapshotMagnifyingLiveViewScaleKey = @"Magni
 	_runningTakingPluralPictures = NO;
 	_abortTakingPluralPictures = NO;
 	_abortedTakingPluralPictures = NO;
-	_takingPictureRunnerQueue = dispatch_queue_create("net.homeunix.hio.ipa.PlayOPC.takingPictureRunner", DISPATCH_QUEUE_SERIAL);
-	_takingPictureStopperQueue = dispatch_queue_create("net.homeunix.hio.ipa.PlayOPC.takingStopperRunner", DISPATCH_QUEUE_SERIAL);
+	_takingPictureRunnerQueue = dispatch_queue_create("net.sewall.SpotAI.takingPictureRunner", DISPATCH_QUEUE_SERIAL);
+	_takingPictureStopperQueue = dispatch_queue_create("net.sewall.SpotAI.takingStopperRunner", DISPATCH_QUEUE_SERIAL);
 	_recordingVideoStartTime = nil;
 	_recordingVideoTimer = nil;
 	

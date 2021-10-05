@@ -110,7 +110,7 @@ NSString *const WifiStatusChangedNotification = @"WifiStatusChangedNotification"
 
 	if (!self.reachability) {
 		AppCamera *camera = GetAppCamera();
-		self.reachabilityQueue = dispatch_queue_create("net.homeunix.hio.ipa.PlayOPC.reachabilityQueue", DISPATCH_QUEUE_SERIAL);
+		self.reachabilityQueue = dispatch_queue_create("net.sewall.SpotAI.reachabilityQueue", DISPATCH_QUEUE_SERIAL);
 		self.reachability = [Reachability reachabilityWithHostName:camera.host];
 	}
 

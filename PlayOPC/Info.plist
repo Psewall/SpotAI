@@ -27,12 +27,12 @@
 			<string>Viewer</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>net.homeunix.hio.ipa.PlayOPC.GetFromOacentral</string>
+				<string>net.sewall.SpotAI.GetFromOacentral</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>3286</string>
+	<string>3301</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>jp.olympus-imaging.oacentral</string>

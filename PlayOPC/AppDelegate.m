@@ -15,7 +15,7 @@
 #import "AppCamera.h"
 #import "AppCameraLog.h"
 
-NSString *const AppUrlSchemeGetFromOacentral = @"net.homeunix.hio.ipa.PlayOPC.GetFromOacentral";
+NSString *const AppUrlSchemeGetFromOacentral = @"net.sewall.SpotAI.GetFromOacentral";
 NSString *const AppOACentralConfigurationDidGetNotification = @"AppOACentralConfigurationDidGetNotification";
 NSString *const AppOACentralConfigurationDidGetNotificationUserInfo = @"AppOACentralConfigurationDidGetNotificationUserInfo";
 
@@ -37,11 +37,13 @@ NSString *const AppOACentralConfigurationDidGetNotificationUserInfo = @"AppOACen
 	DEBUG_LOG(@"launchOptions=%@", launchOptions);
 
 	// Storyboardで設定しても有効にならないので、ここで規定の色合いをハードコーディングして変更します。
+    // Storyboard Even if you set it with, it will not be effective, so hard-code the specified color here and change it.
 	[UINavigationBar appearance].barTintColor = [UIColor colorNamed:@"NaviBarBackColor"];
 	[UINavigationBar appearance].titleTextAttributes = @{NSForegroundColorAttributeName:[UIColor colorNamed:@"NaviBarTextColor"]};
 	[UINavigationBar appearance].tintColor = [UIColor colorNamed:@"NaviBarItemColor"];
 	
 	// カメラログインスタンスをカメラインスタンスより先に生成しておかないと、カメラの初期化に関わるログが記録されません。
+    //If the camera log instance is not created before the camera instance, the log related to camera initialization will not be recorded.
 	self.setting = [[AppSetting alloc] init];
 	self.cameraLog = [[AppCameraLog alloc] init];
 	self.camera = [[AppCamera alloc] init];

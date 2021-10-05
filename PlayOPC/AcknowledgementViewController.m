@@ -36,6 +36,7 @@
 
 	// 謝辞を表示します。
 	NSString *htmlFilePath = [[NSBundle mainBundle] pathForResource:@"Acknowledgement" ofType:@"html"];
+    DEBUG_LOG(@"filepath=%p", htmlFilePath);
 	NSURL *htmlFileUrl = [NSURL fileURLWithPath:htmlFilePath];
 	[self.webView loadRequest:[NSURLRequest requestWithURL:htmlFileUrl]];
 }

@@ -194,6 +194,7 @@
 		820F853C270CBC2400AB95CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3199797C1AD2C9D300AE5A5F /* CoreLocation.framework */; };
 		820F853E270CBC2500AB95CD /* OLYCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311199B41B086F4800538FA0 /* OLYCameraKit.framework */; };
 		820F8540270CBC2700AB95CD /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E48B8F1E6A563800FF25B5 /* Photos.framework */; };
+		820F8543270D076700AB95CD /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 820F8542270D076600AB95CD /* WebKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -407,6 +408,7 @@
 		31EBDED11D277969004B9F88 /* WifiSettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WifiSettingViewController.m; sourceTree = "<group>"; };
 		31F3782C1AE12D23001A7CAD /* AppCamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppCamera.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		31F3782D1AE12D23001A7CAD /* AppCamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = AppCamera.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		820F8542270D076600AB95CD /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +416,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				820F8543270D076700AB95CD /* WebKit.framework in Frameworks */,
 				820F853C270CBC2400AB95CD /* CoreLocation.framework in Frameworks */,
 				820F8540270CBC2700AB95CD /* Photos.framework in Frameworks */,
 				820F8539270CBC2200AB95CD /* CoreBluetooth.framework in Frameworks */,
@@ -651,6 +654,7 @@
 		313870A81AC7D3C900B00309 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				820F8542270D076600AB95CD /* WebKit.framework */,
 				31E48B8F1E6A563800FF25B5 /* Photos.framework */,
 				31841A2C1BC6771A0081C9EF /* AssetsLibrary.framework */,
 				311199B41B086F4800538FA0 /* OLYCameraKit.framework */,
@@ -843,7 +847,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1130;
-				ORGANIZATIONNAME = "Hiroki Ishiura";
+				ORGANIZATIONNAME = "Sewall Bond, LLLP";
 				TargetAttributes = {
 					311B75B71ABC287C00A7D38C = {
 						CreatedOnToolsVersion = 6.2;
@@ -1430,6 +1434,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Q8PP88Z9A7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1450,6 +1455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = Q8PP88Z9A7;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
