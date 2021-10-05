@@ -12,7 +12,6 @@
 		310639301B46B16800BE8597 /* UIImageView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3106392F1B46B16800BE8597 /* UIImageView+Animation.m */; };
 		310639311B46B16800BE8597 /* UIImageView+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3106392F1B46B16800BE8597 /* UIImageView+Animation.m */; };
 		310D78251AECD21200FFCBA5 /* SystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A8097B1AD04DE400186E4D /* SystemViewController.m */; };
-		311199B51B086F4800538FA0 /* OLYCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311199B41B086F4800538FA0 /* OLYCameraKit.framework */; };
 		311199B61B086F4800538FA0 /* OLYCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311199B41B086F4800538FA0 /* OLYCameraKit.framework */; };
 		311199BC1B086FB200538FA0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 311199B91B086FB200538FA0 /* MBProgressHUD.m */; };
 		311199BD1B086FB200538FA0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 311199B91B086FB200538FA0 /* MBProgressHUD.m */; };
@@ -43,7 +42,6 @@
 		312689591B56AA0E00183C1E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3126895B1B56AA0E00183C1E /* Localizable.strings */; };
 		313870A41AC7D27600B00309 /* BluetoothConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 313870A31AC7D27600B00309 /* BluetoothConnector.m */; };
 		313870A51AC7D27600B00309 /* BluetoothConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 313870A31AC7D27600B00309 /* BluetoothConnector.m */; };
-		313870A71AC7D3B300B00309 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313870A61AC7D3B300B00309 /* CoreBluetooth.framework */; };
 		31392FCB1B14B69D0097FF1B /* ReferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31392FCA1B14B69D0097FF1B /* ReferenceViewController.m */; };
 		31392FCC1B14B69D0097FF1B /* ReferenceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31392FCA1B14B69D0097FF1B /* ReferenceViewController.m */; };
 		31392FD01B14BEC40097FF1B /* Reference.html in Resources */ = {isa = PBXBuildFile; fileRef = 31392FD31B14BEC40097FF1B /* Reference.html */; };
@@ -112,7 +110,6 @@
 		319284411AD92E04003BC78F /* CameraPropertyValueSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3192843F1AD92E04003BC78F /* CameraPropertyValueSelectionViewController.m */; };
 		319396941B04CD4B00EAAE35 /* PictureContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319396931B04CD4B00EAAE35 /* PictureContentViewController.m */; };
 		319396951B04CD4B00EAAE35 /* PictureContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 319396931B04CD4B00EAAE35 /* PictureContentViewController.m */; };
-		3199797D1AD2C9D300AE5A5F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3199797C1AD2C9D300AE5A5F /* CoreLocation.framework */; };
 		31A8097C1AD04DE400186E4D /* SystemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A8097B1AD04DE400186E4D /* SystemViewController.m */; };
 		31BD00021B3C3D7200F555A7 /* AppCameraTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BD00011B3C3D7200F555A7 /* AppCameraTests.m */; };
 		31BD64601B0865FD00934C3B /* VideoContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BD645F1B0865FD00934C3B /* VideoContentViewController.m */; };
@@ -178,7 +175,6 @@
 		31E1B9DE1BDC5C190069198B /* LiveImageOverallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E1B9DC1BDC5C190069198B /* LiveImageOverallView.m */; };
 		31E48B8D1E6A55B400FF25B5 /* PHPhotoLibrary+CustomAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E48B8C1E6A55B400FF25B5 /* PHPhotoLibrary+CustomAlbum.m */; };
 		31E48B8E1E6A55BF00FF25B5 /* PHPhotoLibrary+CustomAlbum.m in Sources */ = {isa = PBXBuildFile; fileRef = 31E48B8C1E6A55B400FF25B5 /* PHPhotoLibrary+CustomAlbum.m */; };
-		31E48B911E6A567800FF25B5 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E48B8F1E6A563800FF25B5 /* Photos.framework */; };
 		31E81A2C1B5B7A9E003685A9 /* Recording.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E81A2A1B5B7A9E003685A9 /* Recording.storyboard */; };
 		31E81A2F1B5B7B08003685A9 /* Playback.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E81A2D1B5B7B08003685A9 /* Playback.storyboard */; };
 		31E81A321B5B7B1F003685A9 /* System.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31E81A301B5B7B1F003685A9 /* System.storyboard */; };
@@ -194,6 +190,10 @@
 		31EBDED31D277975004B9F88 /* WifiSettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31EBDED11D277969004B9F88 /* WifiSettingViewController.m */; };
 		31F3782E1AE12D23001A7CAD /* AppCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F3782D1AE12D23001A7CAD /* AppCamera.m */; };
 		31F3782F1AE12D23001A7CAD /* AppCamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F3782D1AE12D23001A7CAD /* AppCamera.m */; };
+		820F8539270CBC2200AB95CD /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 313870A61AC7D3B300B00309 /* CoreBluetooth.framework */; };
+		820F853C270CBC2400AB95CD /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3199797C1AD2C9D300AE5A5F /* CoreLocation.framework */; };
+		820F853E270CBC2500AB95CD /* OLYCameraKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 311199B41B086F4800538FA0 /* OLYCameraKit.framework */; };
+		820F8540270CBC2700AB95CD /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 31E48B8F1E6A563800FF25B5 /* Photos.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -224,7 +224,7 @@
 		3116E8711B9A6D470075046D /* IntervalTimerTimeList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = IntervalTimerTimeList.plist; sourceTree = "<group>"; };
 		3116E8741B9A6DE30075046D /* AutoBracketingCountList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AutoBracketingCountList.plist; sourceTree = "<group>"; };
 		3116E8771B9A6EA60075046D /* AutoBracketingStepList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = AutoBracketingStepList.plist; sourceTree = "<group>"; };
-		311B75B81ABC287C00A7D38C /* PlayOPC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlayOPC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		311B75B81ABC287C00A7D38C /* SpotAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpotAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		311B75BC1ABC287C00A7D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		311B75BD1ABC287C00A7D38C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		311B75BF1ABC287C00A7D38C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = AppDelegate.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -233,7 +233,7 @@
 		311B75C31ABC287C00A7D38C /* ConnectionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = ConnectionViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		311B75C61ABC287C00A7D38C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		311B75C81ABC287C00A7D38C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		311B75D11ABC287C00A7D38C /* PlayOPCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlayOPCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		311B75D11ABC287C00A7D38C /* SpotAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		311B75D61ABC287C00A7D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		311B75D71ABC287C00A7D38C /* PlayOPCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayOPCTests.m; sourceTree = "<group>"; };
 		311F081A1ADFEE2F00318028 /* ItemSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSelectionViewController.h; sourceTree = "<group>"; };
@@ -414,10 +414,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				31E48B911E6A567800FF25B5 /* Photos.framework in Frameworks */,
-				313870A71AC7D3B300B00309 /* CoreBluetooth.framework in Frameworks */,
-				3199797D1AD2C9D300AE5A5F /* CoreLocation.framework in Frameworks */,
-				311199B51B086F4800538FA0 /* OLYCameraKit.framework in Frameworks */,
+				820F853C270CBC2400AB95CD /* CoreLocation.framework in Frameworks */,
+				820F8540270CBC2700AB95CD /* Photos.framework in Frameworks */,
+				820F8539270CBC2200AB95CD /* CoreBluetooth.framework in Frameworks */,
+				820F853E270CBC2500AB95CD /* OLYCameraKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,8 +563,8 @@
 		311B75B91ABC287C00A7D38C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				311B75B81ABC287C00A7D38C /* PlayOPC.app */,
-				311B75D11ABC287C00A7D38C /* PlayOPCTests.xctest */,
+				311B75B81ABC287C00A7D38C /* SpotAI.app */,
+				311B75D11ABC287C00A7D38C /* SpotAITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -800,9 +800,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		311B75B71ABC287C00A7D38C /* PlayOPC */ = {
+		311B75B71ABC287C00A7D38C /* SpotAI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 311B75DB1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "PlayOPC" */;
+			buildConfigurationList = 311B75DB1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "SpotAI" */;
 			buildPhases = (
 				311B75B41ABC287C00A7D38C /* Sources */,
 				311B75B51ABC287C00A7D38C /* Frameworks */,
@@ -813,14 +813,14 @@
 			);
 			dependencies = (
 			);
-			name = PlayOPC;
+			name = SpotAI;
 			productName = PlayOPC;
-			productReference = 311B75B81ABC287C00A7D38C /* PlayOPC.app */;
+			productReference = 311B75B81ABC287C00A7D38C /* SpotAI.app */;
 			productType = "com.apple.product-type.application";
 		};
-		311B75D01ABC287C00A7D38C /* PlayOPCTests */ = {
+		311B75D01ABC287C00A7D38C /* SpotAITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 311B75DE1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "PlayOPCTests" */;
+			buildConfigurationList = 311B75DE1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "SpotAITests" */;
 			buildPhases = (
 				311B75CD1ABC287C00A7D38C /* Sources */,
 				311B75CE1ABC287C00A7D38C /* Frameworks */,
@@ -831,9 +831,9 @@
 			dependencies = (
 				311B75D31ABC287C00A7D38C /* PBXTargetDependency */,
 			);
-			name = PlayOPCTests;
+			name = SpotAITests;
 			productName = PlayOPCTests;
-			productReference = 311B75D11ABC287C00A7D38C /* PlayOPCTests.xctest */;
+			productReference = 311B75D11ABC287C00A7D38C /* SpotAITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -847,7 +847,6 @@
 				TargetAttributes = {
 					311B75B71ABC287C00A7D38C = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = U853Z6LKZW;
 					};
 					311B75D01ABC287C00A7D38C = {
 						CreatedOnToolsVersion = 6.2;
@@ -855,7 +854,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 311B75B31ABC287C00A7D38C /* Build configuration list for PBXProject "PlayOPC" */;
+			buildConfigurationList = 311B75B31ABC287C00A7D38C /* Build configuration list for PBXProject "SpotAI" */;
 			compatibilityVersion = "Xcode 11.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -869,8 +868,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				311B75B71ABC287C00A7D38C /* PlayOPC */,
-				311B75D01ABC287C00A7D38C /* PlayOPCTests */,
+				311B75B71ABC287C00A7D38C /* SpotAI */,
+				311B75D01ABC287C00A7D38C /* SpotAITests */,
 			);
 		};
 /* End PBXProject section */
@@ -1110,7 +1109,7 @@
 /* Begin PBXTargetDependency section */
 		311B75D31ABC287C00A7D38C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 311B75B71ABC287C00A7D38C /* PlayOPC */;
+			target = 311B75B71ABC287C00A7D38C /* SpotAI */;
 			targetProxy = 311B75D21ABC287C00A7D38C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1388,13 +1387,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = Q8PP88Z9A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/PlayOPC/Imports",
 				);
 				INFOPLIST_FILE = PlayOPC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.9;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.homeunix.hio.ipa.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.sewall.PlayOPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1410,8 +1414,12 @@
 					"$(PROJECT_DIR)/PlayOPC/Imports",
 				);
 				INFOPLIST_FILE = PlayOPC/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.9;
-				PRODUCT_BUNDLE_IDENTIFIER = "net.homeunix.hio.ipa.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = net.sewall.PlayOPC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1433,7 +1441,7 @@
 				INFOPLIST_FILE = PlayOPCTests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.homeunix.hio.ipa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayOPC.app/PlayOPC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpotAI.app/SpotAI";
 			};
 			name = Debug;
 		};
@@ -1449,14 +1457,14 @@
 				INFOPLIST_FILE = PlayOPCTests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.homeunix.hio.ipa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlayOPC.app/PlayOPC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpotAI.app/SpotAI";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		311B75B31ABC287C00A7D38C /* Build configuration list for PBXProject "PlayOPC" */ = {
+		311B75B31ABC287C00A7D38C /* Build configuration list for PBXProject "SpotAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				311B75D91ABC287C00A7D38C /* Debug */,
@@ -1465,7 +1473,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		311B75DB1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "PlayOPC" */ = {
+		311B75DB1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "SpotAI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				311B75DC1ABC287C00A7D38C /* Debug */,
@@ -1474,7 +1482,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		311B75DE1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "PlayOPCTests" */ = {
+		311B75DE1ABC287C00A7D38C /* Build configuration list for PBXNativeTarget "SpotAITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				311B75DF1ABC287C00A7D38C /* Debug */,
