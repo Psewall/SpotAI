@@ -99,7 +99,9 @@
 	[self updateClearRememberedCameraSettingCell];
 	
 	// カメラキットのバージョン情報を表示します。
-#if 0 // ビルド番号も表示する場合はこのブロックを有効にします。
+    // Displays the version information of the camera kit.
+#if 1 // ビルド番号も表示する場合はこのブロックを有効にします。
+      // Enable this block if you also want to see the build number.
 	NSString *cameraKitVersion = [[NSString alloc] initWithFormat:@"%@ (%@)", OLYCameraKitVersion, OLYCameraKitBuildNumber];
 #else
 	NSString *cameraKitVersion = OLYCameraKitVersion;
@@ -230,11 +232,16 @@
 	self.bluetoothConnector.peripheral = nil;
 	[self.wifiConnector startMonitoring];
 	
-	// Wi-Fiの接続状態を定期的かつ強制的に更新します。
+	// Wi-Fiの接続状態を定期的かつ強制的に更新します。- Periodically and forcibly updates the connection status of.
 	//   デバイスがカメラのアクセスポイントに直接接続していないような特殊なネットワーク構成の環境では、
 	//   iOSのWi-Fiの状態変化をトリガーにしてカメラの存在を確認しに行くことができないので、
 	//   (デバイスのWi-Fiはカメラとは別のアクセスポイントに繋がりっ放しなので、Wi-Fiの状態が変化しない)、
 	//   これを力技で解決するために、カメラに接続可能か否かを定期的に確認しかつ強制的に更新します。
+    // Update the Wi-Fi connection status regularly and forcibly. --Periodic and forcibly updates the connection status of.
+    // In a special network configuration environment where the device is not directly connected to the camera access point
+    // I can't go to check the existence of the camera triggered by the change of Wi-Fi status of iOS, so
+    // (Since the device's Wi-Fi is connected to an access point other than the camera, the Wi-Fi status does not change),
+    // In order to solve this by force, we regularly check whether it can be connected to the camera and forcibly update it.
 	NSTimeInterval wifiConnectorTimerInterval = 15.0; // 15秒間隔
 	self.wifiConnectorTimer = [NSTimer scheduledTimerWithTimeInterval:wifiConnectorTimerInterval target:self selector:@selector(didFireWifiConnectorTimer:) userInfo:nil repeats:YES];
 	
