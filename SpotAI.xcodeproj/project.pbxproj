@@ -34,7 +34,7 @@
 		311B75C41ABC287C00A7D38C /* ConnectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B75C31ABC287C00A7D38C /* ConnectionViewController.m */; };
 		311B75C71ABC287C00A7D38C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 311B75C51ABC287C00A7D38C /* Main.storyboard */; };
 		311B75C91ABC287C00A7D38C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 311B75C81ABC287C00A7D38C /* Images.xcassets */; };
-		311B75D81ABC287C00A7D38C /* PlayOPCTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B75D71ABC287C00A7D38C /* PlayOPCTests.m */; };
+		311B75D81ABC287C00A7D38C /* SpotAITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 311B75D71ABC287C00A7D38C /* SpotAITests.m */; };
 		311CF4D41BB7861E00366493 /* ContentDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31C3683C1B47BEB00057A390 /* ContentDetailViewController.m */; };
 		311F081C1ADFEE2F00318028 /* ItemSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311F081B1ADFEE2F00318028 /* ItemSelectionViewController.m */; };
 		311F081D1ADFEE2F00318028 /* ItemSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 311F081B1ADFEE2F00318028 /* ItemSelectionViewController.m */; };
@@ -203,7 +203,7 @@
 			containerPortal = 311B75B01ABC287C00A7D38C /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 311B75B71ABC287C00A7D38C;
-			remoteInfo = PlayOPC;
+			remoteInfo = SpotAI;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -212,7 +212,7 @@
 		3103FEA11B23F29E008244C9 /* RecImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecImageButton.m; sourceTree = "<group>"; };
 		3106392E1B46B16800BE8597 /* UIImageView+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+Animation.h"; sourceTree = "<group>"; };
 		3106392F1B46B16800BE8597 /* UIImageView+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+Animation.m"; sourceTree = "<group>"; };
-		311199B41B086F4800538FA0 /* OLYCameraKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OLYCameraKit.framework; path = PlayOPC/Imports/OLYCameraKit.framework; sourceTree = "<group>"; };
+		311199B41B086F4800538FA0 /* OLYCameraKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OLYCameraKit.framework; path = SpotAI/Imports/OLYCameraKit.framework; sourceTree = "<group>"; };
 		311199B81B086FB200538FA0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = Imports/MBProgressHUD.h; sourceTree = "<group>"; };
 		311199B91B086FB200538FA0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = Imports/MBProgressHUD.m; sourceTree = "<group>"; };
 		311199BA1B086FB200538FA0 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Imports/Reachability.h; sourceTree = "<group>"; };
@@ -236,7 +236,7 @@
 		311B75C81ABC287C00A7D38C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		311B75D11ABC287C00A7D38C /* SpotAITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpotAITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		311B75D61ABC287C00A7D38C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		311B75D71ABC287C00A7D38C /* PlayOPCTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayOPCTests.m; sourceTree = "<group>"; };
+		311B75D71ABC287C00A7D38C /* SpotAITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpotAITests.m; sourceTree = "<group>"; };
 		311F081A1ADFEE2F00318028 /* ItemSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSelectionViewController.h; sourceTree = "<group>"; };
 		311F081B1ADFEE2F00318028 /* ItemSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSelectionViewController.m; sourceTree = "<group>"; };
 		312689521B56A9BB00183C1E /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		313D44B71B0CCF0700D6EEAC /* CPanelViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CPanelViewController.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		3142ACD41B23D44F008B2754 /* RecImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecImageViewController.h; sourceTree = "<group>"; };
 		3142ACD51B23D44F008B2754 /* RecImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecImageViewController.m; sourceTree = "<group>"; };
-		314753871ABD268E00FF462E /* PlayOPC-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PlayOPC-Prefix.pch"; sourceTree = "<group>"; };
+		314753871ABD268E00FF462E /* SpotAI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpotAI-Prefix.pch"; sourceTree = "<group>"; };
 		3147538C1ABD4BE700FF462E /* AcknowledgementViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcknowledgementViewController.h; sourceTree = "<group>"; };
 		3147538D1ABD4BE700FF462E /* AcknowledgementViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcknowledgementViewController.m; sourceTree = "<group>"; };
 		3148268F1B4FE82C00AB057A /* AppSetting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppSetting.h; sourceTree = "<group>"; };
@@ -385,10 +385,10 @@
 		31E48B8F1E6A563800FF25B5 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		31E81A2B1B5B7A9E003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Recording.storyboard; sourceTree = "<group>"; };
 		31E81A2E1B5B7B08003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Playback.storyboard; sourceTree = "<group>"; };
-		31E81A311B5B7B1F003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PlayOPC/Base.lproj/System.storyboard; sourceTree = "<group>"; };
+		31E81A311B5B7B1F003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SpotAI/Base.lproj/System.storyboard; sourceTree = "<group>"; };
 		31E81A341B5B8BD5003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecordingSPanel.storyboard; sourceTree = "<group>"; };
 		31E81A371B5B8BF6003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecordingEPanel.storyboard; sourceTree = "<group>"; };
-		31E81A3A1B5B8C11003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = PlayOPC/Base.lproj/RecordingCPanel.storyboard; sourceTree = "<group>"; };
+		31E81A3A1B5B8C11003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = SpotAI/Base.lproj/RecordingCPanel.storyboard; sourceTree = "<group>"; };
 		31E81A3D1B5B8C39003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecordingAPanel.storyboard; sourceTree = "<group>"; };
 		31E81A401B5B8C48003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecordingZPanel.storyboard; sourceTree = "<group>"; };
 		31E81A431B5B8C75003685A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecordingVPanel.storyboard; sourceTree = "<group>"; };
@@ -396,12 +396,12 @@
 		31E81A481B5B9625003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Recording.strings; sourceTree = "<group>"; };
 		31E81A4A1B5B962B003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RecordingSPanel.strings; sourceTree = "<group>"; };
 		31E81A4C1B5B9630003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RecordingEPanel.strings; sourceTree = "<group>"; };
-		31E81A4E1B5B9636003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = PlayOPC/ja.lproj/RecordingCPanel.strings; sourceTree = "<group>"; };
+		31E81A4E1B5B9636003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = SpotAI/ja.lproj/RecordingCPanel.strings; sourceTree = "<group>"; };
 		31E81A501B5B963B003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RecordingAPanel.strings; sourceTree = "<group>"; };
 		31E81A521B5B9640003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RecordingZPanel.strings; sourceTree = "<group>"; };
 		31E81A541B5B9645003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/RecordingVPanel.strings; sourceTree = "<group>"; };
 		31E81A561B5B964B003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Playback.strings; sourceTree = "<group>"; };
-		31E81A581B5B9651003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = PlayOPC/ja.lproj/System.strings; sourceTree = "<group>"; };
+		31E81A581B5B9651003685A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = SpotAI/ja.lproj/System.strings; sourceTree = "<group>"; };
 		31EA271F1BF737B4003402C4 /* LiveImageGridLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = LiveImageGridLayer.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		31EA27201BF737B4003402C4 /* LiveImageGridLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = LiveImageGridLayer.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		31EBDED01D277969004B9F88 /* WifiSettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WifiSettingViewController.h; sourceTree = "<group>"; };
@@ -556,8 +556,8 @@
 		311B75AF1ABC287C00A7D38C = {
 			isa = PBXGroup;
 			children = (
-				311B75BA1ABC287C00A7D38C /* PlayOPC */,
-				311B75D41ABC287C00A7D38C /* PlayOPCTests */,
+				311B75BA1ABC287C00A7D38C /* SpotAI */,
+				311B75D41ABC287C00A7D38C /* SpotAITests */,
 				313870A81AC7D3C900B00309 /* Frameworks */,
 				311B75B91ABC287C00A7D38C /* Products */,
 			);
@@ -572,7 +572,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		311B75BA1ABC287C00A7D38C /* PlayOPC */ = {
+		311B75BA1ABC287C00A7D38C /* SpotAI */ = {
 			isa = PBXGroup;
 			children = (
 				311B75C51ABC287C00A7D38C /* Main.storyboard */,
@@ -609,7 +609,7 @@
 				314BDFA41BAD3F4A00EF8D91 /* LaunchScreen.storyboard */,
 				311B75BB1ABC287C00A7D38C /* Supporting Files */,
 			);
-			path = PlayOPC;
+			path = SpotAI;
 			sourceTree = "<group>";
 		};
 		311B75BB1ABC287C00A7D38C /* Supporting Files */ = {
@@ -620,7 +620,7 @@
 				3126895B1B56AA0E00183C1E /* Localizable.strings */,
 				31392FDB1B14BED40097FF1B /* AppCamera.strings */,
 				311B75BD1ABC287C00A7D38C /* main.m */,
-				314753871ABD268E00FF462E /* PlayOPC-Prefix.pch */,
+				314753871ABD268E00FF462E /* SpotAI-Prefix.pch */,
 				3190B3451B34F61C006B0A16 /* UserDefaults.plist */,
 				3116E8741B9A6DE30075046D /* AutoBracketingCountList.plist */,
 				3116E8771B9A6EA60075046D /* AutoBracketingStepList.plist */,
@@ -633,14 +633,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		311B75D41ABC287C00A7D38C /* PlayOPCTests */ = {
+		311B75D41ABC287C00A7D38C /* SpotAITests */ = {
 			isa = PBXGroup;
 			children = (
 				31BD00011B3C3D7200F555A7 /* AppCameraTests.m */,
-				311B75D71ABC287C00A7D38C /* PlayOPCTests.m */,
+				311B75D71ABC287C00A7D38C /* SpotAITests.m */,
 				311B75D51ABC287C00A7D38C /* Supporting Files */,
 			);
-			path = PlayOPCTests;
+			path = SpotAITests;
 			sourceTree = "<group>";
 		};
 		311B75D51ABC287C00A7D38C /* Supporting Files */ = {
@@ -818,7 +818,7 @@
 			dependencies = (
 			);
 			name = SpotAI;
-			productName = PlayOPC;
+			productName = SpotAI;
 			productReference = 311B75B81ABC287C00A7D38C /* SpotAI.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -836,7 +836,7 @@
 				311B75D31ABC287C00A7D38C /* PBXTargetDependency */,
 			);
 			name = SpotAITests;
-			productName = PlayOPCTests;
+			productName = SpotAITests;
 			productReference = 311B75D11ABC287C00A7D38C /* SpotAITests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -1100,7 +1100,7 @@
 				3154BA641ADFDAA000D96EBE /* UITableViewController+Cell.m in Sources */,
 				31731EC61AEB88AB0094193A /* VPanelViewController.m in Sources */,
 				311199BF1B086FB200538FA0 /* Reachability.m in Sources */,
-				311B75D81ABC287C00A7D38C /* PlayOPCTests.m in Sources */,
+				311B75D81ABC287C00A7D38C /* SpotAITests.m in Sources */,
 				31731EC21AEB888B0094193A /* ZPanelViewController.m in Sources */,
 				31BD00021B3C3D7200F555A7 /* AppCameraTests.m in Sources */,
 				3152CF1B1AF859A500E97036 /* ArtbktPanelViewController.m in Sources */,
@@ -1315,7 +1315,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PlayOPC/PlayOPC-Prefix.pch";
+				GCC_PREFIX_HEADER = "SpotAI/SpotAI-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -1371,7 +1371,7 @@
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PlayOPC/PlayOPC-Prefix.pch";
+				GCC_PREFIX_HEADER = "SpotAI/SpotAI-Prefix.pch";
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -1394,9 +1394,10 @@
 				DEVELOPMENT_TEAM = Q8PP88Z9A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PlayOPC/Imports",
+					"$(PROJECT_DIR)/SpotAI/Imports",
 				);
-				INFOPLIST_FILE = PlayOPC/Info.plist;
+				GCC_PREFIX_HEADER = "SpotAI/SpotAI-Prefix.pch";
+				INFOPLIST_FILE = SpotAI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1416,9 +1417,10 @@
 				DEVELOPMENT_TEAM = Q8PP88Z9A7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PlayOPC/Imports",
+					"$(PROJECT_DIR)/SpotAI/Imports",
 				);
-				INFOPLIST_FILE = PlayOPC/Info.plist;
+				GCC_PREFIX_HEADER = "SpotAI/SpotAI-Prefix.pch";
+				INFOPLIST_FILE = SpotAI/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1438,13 +1440,13 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PlayOPC/Imports",
+					"$(PROJECT_DIR)/Imports",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = PlayOPCTests/Info.plist;
+				INFOPLIST_FILE = SpotAITests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.homeunix.hio.ipa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpotAI.app/SpotAI";
@@ -1459,9 +1461,9 @@
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/PlayOPC/Imports",
+					"$(PROJECT_DIR)/Imports",
 				);
-				INFOPLIST_FILE = PlayOPCTests/Info.plist;
+				INFOPLIST_FILE = SpotAITests/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = "net.homeunix.hio.ipa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpotAI.app/SpotAI";
