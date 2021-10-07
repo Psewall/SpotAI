@@ -1,0 +1,329 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="../css/Olympus.css" />
+
+	<script type="text/javascript" src="../js/menu.js"></script>
+
+	<!-- Google Analytics-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-52489644-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<title>Android Capture Sample</title>
+
+</head>
+
+<body>
+<div class="content">
+
+<!---------------------------------------------------------->
+<!--CONTENTS FROM HERE-->
+<!---------------------------------------------------------->
+
+
+
+<h1 id="samplecaptureappuserguideandroidos">Sample Capture App User Guide (Android OS)</h1>
+
+<p>This document is an operation manual for ImageCaptureSample which uses Olympus Camera Kit for Android OS. This document does not cover app installation or wireless connection between camera and mobile device. </p>
+
+<h2 id="startingapplication">Starting Application</h2>
+
+<ul>
+<li>Application will start by tapping icon of ImageCaptureSample in mobile device’s home screen.</li>
+<li>Application starts communication with camera immediately after starting.</li>
+<li>Display of live view image will start.</li>
+</ul>
+
+<p>Note) This application is designed for landscape orientation only. Rotation of the mobile device is not supported. </p>
+
+<h2 id="terminatingapplication">Terminating Application</h2>
+
+<ul>
+<li>Press home button or back button (hardware button).</li>
+<li>All communication stops when application terminates.</li>
+</ul>
+
+<h2 id="screentransition">Screen Transition</h2>
+<div class="img-center">
+
+<figure>
+<img src="../img/sample/android_capsample_transition.png" alt="" />
+</figure>
+</div>
+
+<ul>
+<li>1)　Shooting Screen</li>
+<li>2)　Preview Screen</li>
+<li>3)　Setting Screen</li>
+<li>12)　Pressing Shutter Button</li>
+<li>21)　Tapping Camera Icon or Tapping Outside of Image</li>
+<li>13)　Tapping Setting Button</li>
+<li>31)　Tapping Back Button</li>
+</ul>
+
+<h2 id="shootingscreen">Shooting Screen</h2>
+<div class="img-center">
+
+<figure>
+<img src="../img/sample/android_capsample01.png" alt="" />
+</figure>
+</div>
+
+<ul>
+<li>1) Menu Bar</li>
+<li>2) Setting Button</li>
+<li>3) Shutter Button</li>
+<li>4) Auto Focus Lock Release Button (enabled when touch shutter is disabled)</li>
+<li>5) Status Display</li>
+<li>6) Live View Image</li>
+</ul>
+
+<hr />
+
+<ul>
+<li>Can shoot still and movie image.</li>
+<li>Can shoot while watching live view image sent from camera in real time.</li>
+</ul>
+
+<h3 id="autofocusaf">Auto Focus (AF)</h3>
+
+<ul>
+<li>Auto focus at tapped point in auto focus enabled area, which is smaller rectangle inside live view image. The auto focus enabled area is invisible on this application.</li>
+<li>If AF-supported micro four thirds lens is not mounted, AF does not work.</li>
+<li>Color of frame will be white during auto focus process.</li>
+<li>When auto focus succeeds, a beep is made and frame color becomes green.</li>
+<li>If you tap outside of auto focus enabled area, frame color becomes red.</li>
+<li>If auto focus fails, error message is shown.</li>
+<li>When touch shutter is enabled, picture is taken after AF. Otherwise, auto focus at the tapped position and lock focus position at the distance.</li>
+<li>Tap Auto Focus Lock Release Button to unlock focus position.</li>
+</ul>
+
+<h3 id="shoot">Shoot</h3>
+
+<ul>
+<li>By tapping shutter button, camera shoots an image regardless of touch shutter setting.</li>
+<li>After shooting is complete, taken image is shown as a preview. In setting screen one can select whether to show preview image or not.</li>
+<li>When touch shutter is enabled, take picture after AF. Otherwise, auto focus and lock focus position.</li>
+</ul>
+
+<h3 id="setting">Setting</h3>
+<div class="img-center">
+
+<figure>
+<img src="../img/sample/android_capsample03.png" alt="" />
+</figure>
+</div>
+
+<ul>
+<li>One can change shooting parameters by tapping menu bar displayed at top part of the screen. Following parameters can be changed from left to right.
+
+<ul>
+<li>Drive Mode
+
+<ul>
+<li>Single Shooting
+
+<ul>
+<li>Shoot one image each by pressing shutter button.</li>
+</ul></li>
+<li>Continuous Shooting
+
+<ul>
+<li>Shoot images continuously while shutter button is pressed.</li>
+<li>No preview images are shown even if preview setting is enabled.</li>
+</ul></li>
+<li>When shooting mode is Movie, Drive Mode setting is invalid.</li>
+</ul></li>
+<li>Shooting Mode
+
+<ul>
+<li>iAuto (Full Automatic Mode)
+
+<ul>
+<li>Cannot change shutter speed, lens aperture, exposure compensation, ISO sensitivity, or white balance mode.</li>
+</ul></li>
+<li>P (Program Auto Exposure Mode)
+
+<ul>
+<li>Cannot change shutter speed or lens aperture.</li>
+</ul></li>
+<li>A (Aperture Priority Auto Exposure)
+
+<ul>
+<li>Cannot change shutter speed.</li>
+</ul></li>
+<li>S (Shutter Priority Auto Exposure)
+
+<ul>
+<li>Cannot change lens aperture.</li>
+</ul></li>
+<li>M (Manual Mode)
+
+<ul>
+<li>Cannot change exposure compensation.</li>
+</ul></li>
+<li>ART (Art Filter Mode)
+
+<ul>
+<li>Shoot with art filter set on camera at the time.</li>
+<li>Cannot change the art filter type.</li>
+</ul></li>
+<li>Movie (Movie Capture Mode)
+
+<ul>
+<li>Start taking movie by tapping shutter button. Stop taking movie by pressing shutter button again.</li>
+<li>Color of shutter button will be gray when shooting movie.</li>
+</ul></li>
+</ul></li>
+<li>Shutter Speed Value
+
+<ul>
+<li>Shutter speed value (set by user or camera) will be displayed in menu bar.</li>
+<li>When long exposure value is set to camera, live view is not updated on screen after pressing shutter button during exposure time.</li>
+<li>Wait until exposure time elapses and app responds correctly.</li>
+</ul></li>
+<li>Lens Aperture Value
+
+<ul>
+<li>Lens aperture value (set by user or camera) will be displayed in menu bar.</li>
+</ul></li>
+<li>Exposure Compensation Value
+
+<ul>
+<li>Exposure compensation value (set by user or camera) will be displayed in menu bar.</li>
+</ul></li>
+<li>White Balance Mode
+
+<ul>
+<li>Selected white balance mode will be displayed in menu bar.</li>
+</ul></li>
+<li>ISO Sensitivity Value
+
+<ul>
+<li>When AUTO is selected, ISO sensitivity value set by camera and text ISO-A will be displayed in menu bar.</li>
+<li>Otherwise, ISO sensitivity value will be displayed in menu bar.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="statusdisplay">Status Display</h3>
+
+<ul>
+<li>Status of camera will be displayed at lower left part of screen. Following status is displayed from top to bottom.
+
+<ul>
+<li>Number of images that can fit in remaining memory.
+
+<ul>
+<li>Valid only for still images.</li>
+</ul></li>
+<li>Charge of camera battery.
+
+<ul>
+<li>Battery icon shows charge in three levels: full, middle, and low.</li>
+<li>The icon shows the status of AC power supply.</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="movetosettingscreen">Move to Setting Screen</h3>
+
+<ul>
+<li>Enter setting screen by tapping the setting button, which is above the shutter button.</li>
+</ul>
+
+<h2 id="previewscreen">Preview Screen</h2>
+
+<ul>
+<li>Displays captured image.</li>
+<li>Go back to shooting screen by tapping camera icon or tapping area outside preview image.</li>
+</ul>
+<div class="img-center">
+
+<figure>
+<img src="../img/sample/android_capsample02.png" alt="" />
+</figure>
+</div>
+
+<h2 id="settingscreen">Setting Screen</h2>
+
+<ul>
+<li>Current application settings are displayed.</li>
+</ul>
+<div class="img-center">
+
+<figure>
+<img src="../img/sample/android_capsample04.png" alt="" />
+</figure>
+</div>
+
+<ul>
+<li>Can view and change following settings.
+
+<ul>
+<li>Live View Quality
+
+<ul>
+<li>Select image size (quality) of live view image.
+
+<ul>
+<li>Lower resolution images (settings toward QVGA) have higher frame rate.</li>
+<li>Higher resolution images (setting toward XGA) have lower frame rate.</li>
+</ul></li>
+</ul></li>
+<li>Touch Shutter
+
+<ul>
+<li>By selecting ON, touch shutter is enabled.</li>
+<li>By selecting OFF, touch auto focus is enabled.</li>
+<li>More detail is shown in Shooting Screen section.</li>
+</ul></li>
+<li>Show Preview
+
+<ul>
+<li>By selecting ON, preview image will be displayed after shooting.</li>
+<li>Preview image is displayed when Drive Mode is Single and Shooting Mode is not Movie.</li>
+<li>By selecting OFF, preview image will not be displayed after shooting.</li>
+</ul></li>
+<li>Power Off
+
+<ul>
+<li>Can turn off power to the camera by tapping.</li>
+</ul></li>
+<li>Camera Version
+
+<ul>
+<li>Shows version of camera firmware.</li>
+</ul></li>
+<li>Camera Kit Version
+
+<ul>
+<li>Shows version of Camera Kit that the application is using.</li>
+</ul></li>
+</ul></li>
+<li><p>Parameters will be saved to application by pressing back button (hardware button) on top.</p></li>
+</ul>
+
+<h2 id="incaseofcommunicationerror">In Case of Communication Error</h2>
+
+<ul>
+<li>An alert is displayed when a communication error occurs between camera and mobile device.</li>
+<li>When alert is displayed, check the communication settings of OS and restart application.</li>
+</ul>
+<!---------------------------------------------------------->
+<!--CONTENTS TO HERE-->
+<!---------------------------------------------------------->
+
+</div>
+</body>
+<script type="text/javascript" src="../js/footer.js"></script>
+</html>

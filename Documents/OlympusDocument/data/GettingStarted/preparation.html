@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<!-- OLYMPUS CSS-->
+<link type="text/css" rel="stylesheet" href="../css/Olympus.css" />
+
+<!-- Google Analytics-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-52489644-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<title>How to Develop</title>
+</head>
+
+<body>
+<script type="text/javascript" src="../js/menu.js"></script>
+
+<div class="content">
+
+<h1 id="toc_0">How to Develop</h1>
+
+<h2 id="toc_1">Procedure of developing an application</h2>
+
+<ol>
+<li>Download Olympus Camera Kit from <a href="http://dl-support.olympus-imaging.com/opc/en/" target="_blank">here</a>.</li>
+
+<li>Try out the sample code.
+
+
+<ul>
+<li>Let&#39;s try out a sample app in the Olympus Camera Kit.</li>
+<li>You can modify the sample application to make your original application. </li>
+</ul></li>
+<li><p>Install Library to your development environment.</p>
+
+<ul>
+<li>See setup guide <a href="./preparation.html#setup">here</a>.</li>
+<li>See also <a href="./preparation.html#ios_technote">setup technical note</a> if you are iOS developer.</li>
+</ul></li>
+<li><p>Develop an application referring to the API Reference and guideline.</p>
+
+<ul>
+<li>If you install the application on an iOS device such as iPhone or iPad, you must become a member of the Apple Developer Program.</li>
+</ul></li>
+<li><p>Publish your application. </p>
+
+<ul>
+<li>See guide for <a href="../inquiry/publication.html">app publishing</a> before publication.</li>
+</ul></li>
+</ol>
+
+<h2 id="toc_2">How to use the camera (over Wi-Fi network)</h2>
+
+<p>The camera must be connected to your device over Wi-Fi network before using an application written with Olympus Camera Kit. Here are some steps to connect the camera to your Wi-Fi terminal.</p>
+
+<ol>
+<li>Power on the camera.</li>
+<li>Automatically the camera works as a Wi-Fi access point.</li>
+<li>Connect the camera to your Wi-Fi device such as smartphone or tablet using the setup screen of your device. </li>
+<li>Start the application on your Wi-Fi device.</li>
+</ol>
+
+<p>NOTE) Olympus Camera Kit provides some APIs to connect OPC via Bluetooth Smart. These APIs work with Olympus&#39; official application &quot;OA.Central.&quot;</p>
+
+<p><a name="setup"></a></p>
+
+<h2 id="toc_3">Library Setup</h2>
+
+<ul>
+<li><a href="./preparation.html#lib_setup_android">Android</a></li>
+<li><a href="./preparation.html#lib_setup_ios">iOS</a></li>
+</ul>
+
+<p><a id="lib_setup_android"></a></p>
+
+<h3 id="toc_4">Android</h3>
+
+<p>Olympus Camera Kit for Android is a Java Archive (JAR). Before developing a camera application, you must add JAR file to Android Studio and change the build settings. The following description assumes building an Android Studio project from scratch. You don&#39;t need to follow this procedure when you add a JAR file to an existing project. </p>
+
+<ol>
+<li><p>Open Android Studio.  Create a new empty project by selecting &quot;Start a new Android Studio project&quot; on the Welcome screen. Here make the application named HelloOLYCameraKit. Change company domain, project location, minimum SDK and activity settings according to your environment. This document skips the details of making a new project.</p>
+
+<div class="img-center"><img src="../img/preparation/android_studio_newproject.png" alt=""></div></li>
+<li><p>Display the Project Window (View &gt; Tool Windows &gt; Project) and select the project name (HelloOLYCameraKit.) Pop up context menu ( right click for Windows. Control+click for MacOS.), and select New &gt; Directory. Label the directory &quot;libs.&quot;</p>
+
+<div class="img-center"><img src="../img/preparation/android_studio_mkdir.png" alt=""></div></li>
+<li><p>Copy Olympus Camera Kit JAR file (olycamerakit.jar) and paste it in the &quot;libs&quot; directory. Select OK for the dialog window to show copy destination. If you drag and drop the JAR file, it will be moved.</p></li>
+<li><p>Confirm that JAR file has been copied into the libs folder. Select the JAR file, and display a context menu to select &quot;Add As Library....&quot;</p>
+
+<div class="img-center"><img src="../img/preparation/android_studio_add_jar.png" alt=""></div></li>
+<li><p>Select target module to link the JAR file, for example &quot;app&quot;, and select OK.</p></li>
+<li><p>See build.gradle file of target module and confirm the JAR file is added.  Select HelloOLYCameraKit &gt; app &gt; build.gradle on Project Window, then you can see the JAR file in a dependencies block.</p></li>
+<li><p>Import the library to your application source code, e.g., Activity. If the library is imported correctly, Android Studio autocompletes the name of the imported library. Generate an OLYCamera object from the application source code, call an API method and operate the camera. However, <strong>DO NOT generate multiple OLYCamera objects for one camera</strong>. OLYCamera object must be a singleton object.</p></li>
+</ol>
+
+<div><pre><code class="language-none">import jp.co.olympus.camerakit.*;
+</code></pre></div>
+
+<p>Now you are all done setting up Olympus Camera Kit for Android Studio.</p>
+
+<p><a name="lib_setup_ios"></a></p>
+
+<h3 id="toc_5">iOS</h3>
+
+<p>The Olympus Camera Kit for iOS is a static framework. Before developing a camera application, you must add this framework to the Xcode project and change build settings. The following description assumes building a Xcode project from scratch. You don&#39;t need to follow this procedure when you add a framework to an existing project.</p>
+
+<ol>
+<li><p>Open Xcode, and create a new empty project ( File &gt; New &gt; Project ). Here make a Single View Application named HelloOLYCameraKit. This document skips the details of making a new project.</p>
+
+<div class="img-center"><img src="../img/preparation/newproject.png" alt=""></div></li>
+<li><p>Display the Project Navigator ( View &gt; Navigators &gt; Show Project Navigator ) and select the project &quot;HelloOLYCameraKit&quot;. Select &quot;New Group&quot; from the context menu (Control + Click). </p>
+
+<div class="img-center"><img src="../img/preparation/newgroup.png" alt=""></div></li>
+<li><p>Confirm the new group (new folder) named &quot;New Group&quot; is generated, and rename it &quot;Frameworks&quot;.</p>
+
+<div class="img-center"><img src="../img/preparation/frameworks_folder.png" alt=""></div></li>
+<li><p>Display the Project Navigator ( View &gt; Navigators &gt; Show Project Navigator ), drag the OLYCameraKit.framework, and drop it in the &quot;Frameworks&quot; folder.</p>
+
+<div class="img-center"><img src="../img/preparation/ios_framework_drag.png" alt=""></div></li>
+<li><p>Check the following on the option dialog box. Then push the Finish button. </p>
+
+<div class="img-center"><img src="../img/preparation/add_framework_dialog.png" alt=""></div></li>
+<li><p>Check that the OLYCameraKit.framework has been added to the Frameworks folder.</p>
+
+<div class="img-center"><img src="../img/preparation/added_olycamerakit.png" alt=""></div></li>
+<li><p>On selecting OLYCameraKit.framework, select &quot;Show in Finder&quot; from the context menu (Control + Click). Confirm the OLYCameraKit.framework has been copied to the same folder as the new project file.</p></li>
+<li><p>Display the project navigator, and select the project (HelloOLYCameraKit). Select the target object in the editor area. Then click the &quot;Build Phases&quot; tab. Expand &quot;Link Binary with Libraries&quot; menu and press + button.</p></li>
+<li><p>Add the following frameworks. </p>
+
+<ul>
+<li>AudioToolbox.framework</li>
+<li>CFNetwork.framework</li>
+<li>ImageIO.framework</li>
+<li>SystemConfiguration.framework</li>
+<li>Foundation.framework</li>
+<li>CoreGraphics.framework</li>
+<li>UIKit.framework</li>
+</ul></li>
+
+<div class="img-center"><img src="../img/preparation/addFW.png" alt=""></div>
+<li><p>Select the HelloOLYCameraKit project in the project navigator, and add &quot;-ObjC&quot; parameter in the editor area ( Project &gt; Build Settings &gt; Linking &gt; Other Linker Flags ). You can quickly find the target parameter by searching with keyword &quot;other linker flags&quot;. <strong>If you build without -ObjC settings, a run-time exception will occur when a method in OLYCamera class is called</strong>.</p>
+
+<div class="img-center"><img src="../img/preparation/other_linker_flags.png" alt=""></div></li>
+<li><p>Import the framework to your application source code, e.g., AppDelegate. If the framework is imported correctly, Xcode autocompletes the name of the imported framework. Generate an OLYCamera object from the application source code, call an API method and operate the camera. However, <strong>DO NOT generate multiple OLYCamera objects for one camera</strong>. OLYCamera object must be a singleton object.</p></li>
+</ol>
+
+<div><pre><code class="language-none">#import&lt;OLYCameraKit/OLYCamera.h&gt;</code></pre></div>
+
+<p>Now you are all done setting up Olympus Camera Kit for iOS.</p>
+
+<p><a id="ios_technote"></a></p>
+
+<h2 id="toc_6">Setup Technical Note for iOS</h2>
+
+<h3 id="toc_7">Settings for App Transport Security (ATS)</h3>
+
+<p>Follow instructions below according to target iOS version.</p>
+
+<ul>
+<li><p>iOS10 or later            </p>
+
+<ul>
+<li>No change needed<br></li>
+</ul></li>
+<li><p>iOS9          </p>
+
+<ul>
+<li>The camera cannot communicate with https.</li>
+<li>Add &quot;NSAppTransportSecurity&quot; key to &quot;info.plist&quot; and disable ATS. The figure below shows more details.</li>
+<li>info.plist can be edited in Xcode or text editor.</li>
+</ul></li>
+</ul>
+
+<h3 id="toc_8">Settings for Custom URL Scheme</h3>
+
+<ul>
+<li>This setting is not mandatory. Custom URL Scheme is necessary when your app gets Bluetooth Smart settings from OA.Central, Olympus&#39; official app. </li>
+<li>Xcode 7 or later versions require a white list of URL scheme, which are permitted to receive and process.</li>
+<li>URL scheme is different in Japan and US. Add two URL schemes to your info.plist.
+	<ul>
+	<li>jp.olympus-imaging.oacentral</li>
+	<li>jp.olympus-imaging.oacentralus</li>
+	</ul>
+</li>
+</ul>
+
+<p>Here is part of info.plist after modifiying all above settings.</p>
+
+<div class="img-center"><img src="../img/preparation/xcode7_info_plist.png" alt=""></div>
+
+
+</div>
+</body>
+<script type="text/javascript" src="../js/footer.js"></script>
+
+</html>

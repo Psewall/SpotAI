@@ -1,0 +1,27 @@
+var category_o_l_y_camera_07_camera_system_08 =
+[
+    [ "cameraPropertyTitle:", "category_o_l_y_camera_07_camera_system_08.html#ae7768a1d38db3d60a9a9256cadc446cd", null ],
+    [ "cameraPropertyValue:error:", "category_o_l_y_camera_07_camera_system_08.html#ade9e0ae8eefe07f2c59f75ca57b5fc77", null ],
+    [ "cameraPropertyValueList:error:", "category_o_l_y_camera_07_camera_system_08.html#a1ea075b0d468e718089e356bfc122538", null ],
+    [ "cameraPropertyValues:error:", "category_o_l_y_camera_07_camera_system_08.html#ac18ad6b2c04829ac917809d64ee3eb34", null ],
+    [ "cameraPropertyValueTitle:", "category_o_l_y_camera_07_camera_system_08.html#a43bf21a5097e8ce2f51c1542530b697b", null ],
+    [ "canSetCameraProperty:", "category_o_l_y_camera_07_camera_system_08.html#acbaa55cc72d847fa447acf5f29fb5156", null ],
+    [ "changeRunMode:error:", "category_o_l_y_camera_07_camera_system_08.html#ad3e10979ca40beb1e766eebacdfc43e1", null ],
+    [ "changeTime:error:", "category_o_l_y_camera_07_camera_system_08.html#a85393d7829015d14162c1d07a8e50a59", null ],
+    [ "clearGeolocation:", "category_o_l_y_camera_07_camera_system_08.html#ad6314e6d99c1c258d3d0801cce4baef6", null ],
+    [ "inquireHardwareInformation:", "category_o_l_y_camera_07_camera_system_08.html#a0a678986c27584338711ebd35fb03046", null ],
+    [ "setCameraPropertyValue:value:error:", "category_o_l_y_camera_07_camera_system_08.html#a88e03dd312446edc367bb6710a701241", null ],
+    [ "setCameraPropertyValues:error:", "category_o_l_y_camera_07_camera_system_08.html#abecfa9735ac14f5f2ab723374ecbadb6", null ],
+    [ "setGeolocation:error:", "category_o_l_y_camera_07_camera_system_08.html#a6aa602aa95ed563e6b3db5811263c213", null ],
+    [ "cameraPropertyDelegate", "category_o_l_y_camera_07_camera_system_08.html#a53875bb99854904810e2c4afe627e630", null ],
+    [ "cameraPropertyNames", "category_o_l_y_camera_07_camera_system_08.html#ab493f169e086035df8da784fb2feb0d9", null ],
+    [ "highTemperatureWarning", "category_o_l_y_camera_07_camera_system_08.html#a3335bee42d3e0ef1b39571c0a98fd294", null ],
+    [ "lensMountStatus", "category_o_l_y_camera_07_camera_system_08.html#a8321bd55d950e2e770cbee037a0d8504", null ],
+    [ "mediaBusy", "category_o_l_y_camera_07_camera_system_08.html#a1752c10201a8688aec2173da42077398", null ],
+    [ "mediaError", "category_o_l_y_camera_07_camera_system_08.html#a830db4867d5cc1fe73b750544d04158c", null ],
+    [ "mediaMountStatus", "category_o_l_y_camera_07_camera_system_08.html#affe87e4d874e474bd5e5d7cbba7207af", null ],
+    [ "remainingImageCapacity", "category_o_l_y_camera_07_camera_system_08.html#a49ad5b1600d8fabc9b4d436e38f4ad5d", null ],
+    [ "remainingMediaCapacity", "category_o_l_y_camera_07_camera_system_08.html#ad6de82ea5b731ae6b49670beb137833b", null ],
+    [ "remainingVideoCapacity", "category_o_l_y_camera_07_camera_system_08.html#a06a1a1c9fff1d394637210c174638556", null ],
+    [ "runMode", "category_o_l_y_camera_07_camera_system_08.html#a6b629505c33498b23e3b53edff87d637", null ]
+];

@@ -1,0 +1,100 @@
+####Art Filter Variations
+**Overview**
+
++ Art Filter Variations allow users to customize each original filter with different moods and effects.
++ Each art filter has a different number of variations and some filters have no variations.
++ These camera properties are valid if TAKEMODE is not ART and COLORTONE is set to a value related to art filter.
+
+
+**Art Filter Variations and Sample Images**
+
+<div class="table-artvariation-2">
+
+|                    |                            Original                            |                                                                                                                             TYPE I(or No Variation)                                                                                                                             |                                                            TYPE II                                                            |                                       TYPE III                                       |
+|--------------------|----------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| Pop Art            |                                                                | Super-saturates colors, creating brighter, more vivid photographs.                                                                                                                                                                                                             | Fluorescent colors are less prominent than in Type I, but color contrast has been enhanced to create a more striking image. | NA                                                                                |
+|                    | <img src="../img/art/popart/popart_0.jpg">                     | <img src="../img/art/popart/popart_1.jpg">                                                                                                                                                                                                                                     | <img src="../img/art/popart/popart_2.jpg">                                                                                  |                                                                                   |
+| Soft Focus         |                                                                | Creates a dreamlike quality giving photographs a surreal look.                                                                                                                                                                                                                 | NA                                                                                                                          | NA                                                                                |
+|                    | <img src="../img/art/fantasic_focus/fantasic_focus_0.jpg">     | <img src="../img/art/fantasic_focus/fantasic_focus_1.jpg">                                                                                                                                                                                                                     |                                                                                                                             |                                                                                   |
+| Pale & Light Color |                                                                | Brings soft, flat light and pastel coloring to photographs.                                                                                                                                                                                                                    | Type II is more reddish and overexposed than Type I                                                                         | NA                                                                                |
+|                    | <img src="../img/art/daydream/daydream_0.jpg">                 | <img src="../img/art/daydream/daydream_1.jpg">                                                                                                                                                                                                                                 | <img src="../img/art/daydream/daydream_2.jpg">                                                                              |                                                                                   |
+| Light Tone         |                                                                | Brightens the image, and its darker areas, providing more detail.                                                                                                                                                                                                              | NA                                                                                                                          | NA                                                                                |
+|                    | <img src="../img/art/light_tone/light_tone_0.jpg">             | <img src="../img/art/light_tone/light_tone_1.jpg">                                                                                                                                                                                                                             |                                                                                                                             |                                                                                   |
+| Grainy Film        |                                                                | Produces a gritty black-and-white film quality.                                                                                                                                                                                                                                | Type II has less contrast than Type I, optimizing the image's impact.                                                       | NA                                                                                |
+|                    | <img src="../img/art/rough_monochrome/rough_monochrome_0.jpg"> | <img src="../img/art/rough_monochrome/rough_monochrome_1.jpg">                                                                                                                                                                                                                 | <img src="../img/art/rough_monochrome/rough_monochrome_2.jpg">                                                              |                                                                                   |
+| Pin Hole           |                                                                | Darkens the outer edges of a photograph, thereby enhancing the subject in the center and bringing the photograph to life.                                                                                                                                                      | The contrast is softened using more bluish hue than Type I.                                                                 | The contrast is softened using more reddish hue than Type I.                      |
+|                    | <img src="../img/art/toy_photo/toy_photo_0.jpg">               | <img src="../img/art/toy_photo/toy_photo_1.jpg">                                                                                                                                                                                                                               | <img src="../img/art/toy_photo/toy_photo_2.jpg">                                                                            | <img src="../img/art/toy_photo/toy_photo_3.jpg">                                  |
+| Diorama            |                                                                | Gives users a miniature model photo feeling by narrowing the depth of focus and enhancing color and contrast. Type I gradually strengthens the top and bottom blurring at the focus point of origin.                                                                           | Type II gradually strengthens the left and right blurring at the focus point of origin for portrait shots.                  | NA                                                                                |
+|                    | <img src="../img/art/miniature/miniature_0.jpg">               | <img src="../img/art/miniature/miniature_1.jpg">                                                                                                                                                                                                                               | <img src="../img/art/miniature/miniature_2.jpg">                                                                            |                                                                                   |
+| Cross Process      |                                                                | Offers an unexpected look to images and videos by changing the color and contrast of subjects. Using this mode can result in surreal otherworldly images. Type I gives a cyan hue.                                                                                   | Type II gives a magenta hue.                                                                                                | NA                                                                                |
+|                    | <img src="../img/art/cross_process/cross_process_0.jpg">       | <img src="../img/art/cross_process/cross_process_1.jpg">                                                                                                                                                                                                                       | <img src="../img/art/cross_process/cross_process_2.jpg">                                                                    |                                                                                   |
+| Gentle Sepia       |                                                                | Gives your images and videos a soft, warm sepia cast similar to historical images from the early days of photography. The sepia tones are softer and the blacks are a true black, unlike traditional sepia images.                                                             | NA                                                                                                                          | NA                                                                                |
+|                    | <img src="../img/art/gentle_sepia/gentle_sepia_0.jpg">         | <img src="../img/art/gentle_sepia/gentle_sepia_1.jpg">                                                                                                                                                                                                                         |                                                                                                                             |                                                                                   |
+| Dramatic Tone      |                                                                | Provides a daily landscape with a dramatic impression. It applies local changes in contrast to the image to represent the real space in a fictitious style by creating unrealistic tones of light and darkness.                                                                | Type II adds a monochromatic effect.                                                                                        | NA                                                                                |
+|                    | <img src="../img/art/dramatic_tone/dramatic_tone_0.jpg">       | <img src="../img/art/dramatic_tone/dramatic_tone_1.jpg">                                                                                                                                                                                                                       | <img src="../img/art/dramatic_tone/dramatic_tone_2.jpg">                                                                    |                                                                                   |
+| Key Line           |                                                                | Enhances the edge lines of the image to make it look more like an illustration.                                                                                                                                                                                                | The edge lines are further emphasized than Type I.                                                                          | NA                                                                                |
+|                    | <img src="../img/art/ligne_clair/ligne_clair_0.jpg">           | <img src="../img/art/ligne_clair/ligne_clair_1.jpg">                                                                                                                                                                                                                           | <img src="../img/art/ligne_clair/ligne_clair_2.jpg">                                                                        |                                                                                   |
+| Watercolor         |                                                                | Eliminates darker areas in the image to daringly represent bright color tones on a white canvas to express a world awash in color.                                                                                                                                             | Type II attenuates the contour lines so that contours are instead represented by gradations in color tone variation.        | NA                                                                                |
+|                    | <img src="../img/art/pastel/pastel_0.jpg">                     | <img src="../img/art/pastel/pastel_1.jpg">                                                                                                                                                                                                                                     | <img src="../img/art/pastel/pastel_2.jpg">                                                                                  |                                                                                   |
+| Vintage            |                                                                | Gives a nostalgic expression to casual everyday scenes, transforming them into "a special photo that has stood the test of time.” Type I produces faded colors created when light leaks onto film.                                                                             | Type II produces faded colors to create the nostalgic feel of an old photograph.                                            | Type III produces softened tones for a sophisticated feel.                        |
+|                    | <img src="../img/art/vintage/vintage_0.jpg">                   | <img src="../img/art/vintage/vintage_1.jpg">                                                                                                                                                                                                                                   | <img src="../img/art/vintage/vintage_2.jpg">                                                                                | <img src="../img/art/vintage/vintage_3.jpg">                                      |
+| Partial Color      |                                                                | Emphasizes a specific part of the photo, done by choosing one specific color and leaving all the rest in black and white. Makes your photographic subjects more impressive.Type I keeps colors in natural gradations based on the selected color making the subject stand out. | Type II maintains a small amount of color for the non-selected colors creating a unique effect.                             | Type III keeps only the selected color for a stronger emphasis of a single color. |
+|                    | <img src="../img/art/partcolor/partcolor_0.jpg">               | <img src="../img/art/partcolor/partcolor_1.jpg">                                                                                                                                                                                                                               | <img src="../img/art/partcolor/partcolor_2.jpg">                                                                            | <img src="../img/art/partcolor/partcolor_3.jpg">                                  |
+
+</div>
+
+**Property Value**
+<div class="table-artfilter-1">
+
+| Property Value| Description |
+|---------------|-------------|
+| TYPE1         | TYPE I      |
+| TYPE2         | TYPE II     |
+| TYPE3         | TYPE III    |
+
+</div>
+
+**Supported Value for Each Property**
+
++ If cell is OK, corresponding property in rows can set corresponding value in columns.
+
+<div class="table-artvariation-1">
+
+|                    | <p align="right">Property Value</p> | TYPE1 | TYPE2 | TYPE3 |
+|--------------------|-------------------------------------|-------|-------|-------|
+| Art Filter         | Property Name                       |       |       |       |
+| Pop Art            | ART_EFFECT_TYPE_POPART              | OK    | OK    | -     |
+| Soft Focus         | -                                   | -     | -     | -     |
+| Pale & Light Color | ART_EFFECT_TYPE_DAYDREAM            | OK    | OK    | -     |
+| Light Tone         | -                                   | -     | -     | -     |
+| Grainy Film        | ART_EFFECT_TYPE_ROUGH_MONOCHROME    | OK    | OK    | -     |
+| Pin Hole           | ART_EFFECT_TYPE_TOY_PHOTO           | OK    | OK    | OK    |
+| Diorama            | ART_EFFECT_TYPE_MINIATURE           | OK    | OK    | -     |
+| Cross Process      | ART_EFFECT_TYPE_CROSS_PROCESS       | OK    | OK    | -     |
+| Gentle Sepia       | -                                   | -     | -     | -     |
+| Dramatic Tone      | ART_EFFECT_TYPE_DRAMATIC_TONE       | OK    | OK    | -     |
+| Key Line           | ART_EFFECT_TYPE_LIGNE_CLAIR         | OK    | OK    | -     |
+| Watercolor         | ART_EFFECT_TYPE_PASTEL              | OK    | OK    | -     |
+| Vintage            | ART_EFFECT_TYPE_VINTAGE             | OK    | OK    | OK    |
+| Partial Color      | ART_EFFECT_TYPE_PARTCOLOR           | OK    | OK    | OK    |
+
+</div>
+
+
+**Access Permission**
+<div class="table-art-access">
+
+|   Wi-Fi    | Bluetooth Smart |
+|------------|-----------------|
+| Read/Write | Read/Write      |
+
+</div>
+
+**Supported Shooting Mode**
+<div class="table-art-conflict">
+
+| iAuto | P  | A  | S  | M  | ART | movieP | movieA | movieS | movieM |
+|-------|----|----|----|----|-----|--------|--------|--------|--------|
+|       | OK | OK | OK | OK | OK  | OK     | OK     | OK     | OK     |
+
+</div>

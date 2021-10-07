@@ -1,0 +1,3934 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>OLYCameraKit Property List</title>
+		<link type="text/css" rel="stylesheet" href="../css/Olympus.css" />
+		<script type="text/javascript" src="../js/jquery.js"></script>
+		
+		<!-- toc generation -->
+		<script type="text/javascript">
+		$( document ).ready(function() {
+			var list="";  //toc
+
+			//search <h3>,<h4> and make toc automatically
+			jQuery("h3, h4").each(function(i){
+				var clsName = $(this).get()[0].localName;
+				//<h3> CATEGORY
+				if(clsName == "h3")
+				{
+					//link ID
+					var idName = "category_" + i;
+					//make anchor
+					jQuery(this).attr("id", idName);
+					//make link on toc
+					list += '<h3><a href="#' + idName + '">' + jQuery(this).text() + '</a></h3>';
+				}
+				//<h4> PROPERTY
+				else if(clsName == "h4")
+				{
+					//link ID name
+					var idName = "property_" + i;
+					//make anchor
+					jQuery(this).attr("id", idName);
+					//wrap by <div>
+					jQuery(this).wrap('<div class="proptitle"></div>');
+					//make link on toc
+					list += '<a href="#' + idName + '">' + jQuery(this).text() + '</a><br> ';
+					//make link to the top of list for each property	
+					jQuery(this).parent("div").after('<div class="backtotoc"><a href="#toc">Back to TOP</a></div>');
+
+				}
+
+			});
+			//write toc at tag with "toc" ID
+			if (jQuery("h4").length){
+				jQuery("#toc").append('<ul>' + list + '</ul>');
+			}
+		});
+			
+	</script>
+
+	<!-- Google Analytics-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-52489644-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	</head>
+<body>
+<script type="text/javascript" src="../js/menu.js"></script>
+<div class="content">
+
+
+<div class="legend">
+<!---------------------------------------------------------->
+<!--HEADER FROM HERE-->
+<!---------------------------------------------------------->
+
+<h1 id="olycamerakitpropertylist">OLYCameraKit Property List</h1>
+
+<h2 id="overview">Overview</h2>
+
+<ul>
+<li>Property is setting value of camera.</li>
+<li>Methods to control property in OLYCameraKit can read and write property.</li>
+<li>There are &#8220;Read Only&#8221; properties and &#8220;Read-Write (Writable)&#8221; properties.</li>
+<li>The value for a writable property can be changed by specifying property name and property value.</li>
+</ul>
+
+<h2 id="methodstocontrolproperty">Methods to control property</h2>
+
+<ul>
+<li>The following table shows methods to read property, write property, and acquire the list of properties etc.</li>
+</ul>
+<div class="table-desc-2-2">
+<table>
+<caption> iOS </caption>
+<tr>
+<th>Operation</th>
+<th>Corresponding Method</th>
+</tr>
+<tr>
+<td>Get list of camera property names currently available.</td><td class="desc">cameraPropertyNames:</td>
+</tr>
+<tr>
+<td>Get value that is set in camera properties.</td><td class="desc">cameraPropertyValue:error:</td>
+</tr>
+<tr>
+<td>Get values that are set in camera properties.</td><td class="desc">cameraPropertyValues:error:</td>
+</tr>
+<tr>
+<td>Get list of camera property values that can be set.</td><td class="desc">cameraPropertyValueList:error:</td>
+</tr>
+<tr>
+<td>Set value to camera properties.</td><td class="desc">setCameraPropertyValue:value:error:</td>
+</tr>
+<tr>
+<td>Set values to camera properties.</td><td class="desc">setCameraPropertyValues:error:</td>
+</tr>
+<tr>
+<td>More details.</td>
+<td class="desc">
+See methods in <a href="../apirefiOS/category_o_l_y_camera_07_camera_system_08.html">OLYCamera(CameraSystem) Category</a>
+</td>
+</tr>
+</table>
+<table>
+<caption>Android</caption>
+<tr>
+<th>Operation</th>
+<th>Corresponding Method</th>
+</tr>
+<tr>
+<td>Get list of camera property names currently available.</td><td class="desc">getCameraPropertyNames()</td>
+</tr>
+<tr>
+<td>Get value that is set in camera properties.</td><td class="desc">getCameraPropertyValue(name)</td>
+</tr>
+<tr>
+<td>Get values that are set in camera properties.</td><td class="desc">getCameraPropertyValues(names)</td>
+</tr>
+<tr>
+<td>Get list of camera property values that can be set.</td><td class="desc">getCameraPropertyValueList(name)</td>
+</tr>
+<tr>
+<td>Set value to camera properties.</td><td class="desc">setCameraPropertyValue(name, value)</td>
+</tr>
+<tr>
+<td>Set values to camera properties.</td><td class="desc">setCameraPropertyValues(values)</td>
+</tr>
+<tr>
+<td>More details.</td><td class="desc">
+See methods in <a href="../apirefAndroid/classjp_1_1co_1_1olympus_1_1camerakit_1_1_o_l_y_camera.html#system">Camera System group in OLYCamera Class</a>
+</td>
+</tr>
+</table>
+</div>
+
+<h2 id="sectionsandlegendofpropertylist">Sections and Legend of Property List</h2>
+
+<p><strong>Sections</strong></p>
+<div class="table-desc-2-2">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Section</th>
+	<th style="text-align:left;">Summary</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Name and Function</td>
+	<td style="text-align:left;">Name and function of property. Property to read and write is specified by the property name.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Property Value</td>
+	<td style="text-align:left;">List of values to be set on the property. The values not in this list cannot be set to the property.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Access Permission</td>
+	<td style="text-align:left;">Read-only, read-write or not-supported. See the subsection below for more details.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Supported Shooting Mode</td>
+	<td style="text-align:left;">List of shooting modes in which the property is valid. See the subsection below for more details.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Access Permission</strong></p>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Wireless Standard</th>
+	<th style="text-align:left;">Access Permission</th>
+	<th style="text-align:left;">Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Wi-Fi</td>
+	<td style="text-align:left;">Read Only</td>
+	<td style="text-align:left;">You can only get the value of property from the camera via Wi-Fi.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Read Write</td>
+	<td style="text-align:left;">You can get and set the value of property to configure the camera via Wi-Fi.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Not Supported</td>
+	<td style="text-align:left;">Wi-Fi does not support this property.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Bluetooth Smart</td>
+	<td style="text-align:left;">Read Only</td>
+	<td style="text-align:left;">You can only get the value of property from the camera via Bluetooth Smart.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Read Write</td>
+	<td style="text-align:left;">You can get and set the value of property to configure the camera via Bluetooth Smart.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;">Not Supported</td>
+	<td style="text-align:left;">Bluetooth Smart does not support this property.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<p><strong>Supported Shooting Mode</strong></p>
+
+<ul>
+<li>The camera supports 10 shooting modes.</li>
+<li>Shooting mode can be changed by the following properties.
+
+<ul>
+<li>TAKEMODE</li>
+<li>EXPOSE_MOVIE_SELECT</li>
+</ul></li>
+<li>See the table below for details of correspondence between shooting mode and property.</li>
+<li>See the description of property corresponding to each shooting mode in property list for more details of each shooting mode.</li>
+</ul>
+<div class="table-desc-10-1">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+<col style="text-align:center;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Shooting Mode</th>
+	<th style="text-align:center;">iAuto</th>
+	<th style="text-align:center;">P</th>
+	<th style="text-align:center;">A</th>
+	<th style="text-align:center;">S</th>
+	<th style="text-align:center;">M</th>
+	<th style="text-align:center;">ART</th>
+	<th style="text-align:center;">movie<br>P</th>
+	<th style="text-align:center;">movie<br>A</th>
+	<th style="text-align:center;">movie<br>S</th>
+	<th style="text-align:center;">movie<br>M</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">TAKEMODE</td>
+	<td style="text-align:center;">iAuto</td>
+	<td style="text-align:center;">P</td>
+	<td style="text-align:center;">A</td>
+	<td style="text-align:center;">S</td>
+	<td style="text-align:center;">M</td>
+	<td style="text-align:center;">ART</td>
+	<td style="text-align:center;">movie</td>
+	<td style="text-align:center;">movie</td>
+	<td style="text-align:center;">movie</td>
+	<td style="text-align:center;">movie</td>
+</tr>
+<tr>
+	<td style="text-align:left;">EXPOSE_MOVIE_SELECT</td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;"></td>
+	<td style="text-align:center;">P</td>
+	<td style="text-align:center;">A</td>
+	<td style="text-align:center;">S</td>
+	<td style="text-align:center;">M</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="propertylist">Property List</h2>
+
+
+
+<!---------------------------------------------------------->
+<!--HEADER TO HERE-->
+<!---------------------------------------------------------->
+</div>
+
+<div id="toc">
+<!---------------------------------------------------------->
+<!--TOC-->
+<!---------------------------------------------------------->
+</div>
+
+<div class="proplist">
+
+<!---------------------------------------------------------->
+<!--PROPERTY LIST FROM HERE-->
+<!---------------------------------------------------------->
+<h3>a. Basics</h3>
+	<h4>Aperture Value</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>APERTURE</td>
+		<td>Aperture value (F value)<br>Value varies according to kind of lens. The camera gets/sets 2.8 for aperture value F2.8.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>1.0</td>
+		<td>F1.0</td>
+		</tr>
+		<tr>
+		<td>1.1</td>
+		<td>F1.1</td>
+		</tr>
+		<tr>
+		<td>1.2</td>
+		<td>F1.2</td>
+		</tr>
+		<tr>
+		<td>1.4</td>
+		<td>F1.4</td>
+		</tr>
+		<tr>
+		<td>1.6</td>
+		<td>F1.6</td>
+		</tr>
+		<tr>
+		<td>1.8</td>
+		<td>F1.8</td>
+		</tr>
+		<tr>
+		<td>2.0</td>
+		<td>F2.0</td>
+		</tr>
+		<tr>
+		<td>2.2</td>
+		<td>F2.2</td>
+		</tr>
+		<tr>
+		<td>2.5</td>
+		<td>F2.5</td>
+		</tr>
+		<tr>
+		<td>2.8</td>
+		<td>F2.8</td>
+		</tr>
+		<tr>
+		<td>3.2</td>
+		<td>F3.2</td>
+		</tr>
+		<tr>
+		<td>3.5</td>
+		<td>F3.5</td>
+		</tr>
+		<tr>
+		<td>4.0</td>
+		<td>F4.0</td>
+		</tr>
+		<tr>
+		<td>4.5</td>
+		<td>F4.5</td>
+		</tr>
+		<tr>
+		<td>5.0</td>
+		<td>F5.0</td>
+		</tr>
+		<tr>
+		<td>5.6</td>
+		<td>F5.6</td>
+		</tr>
+		<tr>
+		<td>6.3</td>
+		<td>F6.3</td>
+		</tr>
+		<tr>
+		<td>7.1</td>
+		<td>F7.1</td>
+		</tr>
+		<tr>
+		<td>8.0</td>
+		<td>F8.0</td>
+		</tr>
+		<tr>
+		<td>9.0</td>
+		<td>F9.0</td>
+		</tr>
+		<tr>
+		<td>10</td>
+		<td>F10</td>
+		</tr>
+		<tr>
+		<td>11</td>
+		<td>F11</td>
+		</tr>
+		<tr>
+		<td>13</td>
+		<td>F13</td>
+		</tr>
+		<tr>
+		<td>14</td>
+		<td>F14</td>
+		</tr>
+		<tr>
+		<td>16</td>
+		<td>F16</td>
+		</tr>
+		<tr>
+		<td>18</td>
+		<td>F18</td>
+		</tr>
+		<tr>
+		<td>20</td>
+		<td>F20</td>
+		</tr>
+		<tr>
+		<td>22</td>
+		<td>F22</td>
+		</tr>
+		<tr>
+		<td>25</td>
+		<td>F25</td>
+		</tr>
+		<tr>
+		<td>29</td>
+		<td>F29</td>
+		</tr>
+		<tr>
+		<td>32</td>
+		<td>F32</td>
+		</tr>
+		<tr>
+		<td>36</td>
+		<td>F36</td>
+		</tr>
+		<tr>
+		<td>40</td>
+		<td>F40</td>
+		</tr>
+		<tr>
+		<td>45</td>
+		<td>F45</td>
+		</tr>
+		<tr>
+		<td>51</td>
+		<td>F51</td>
+		</tr>
+		<tr>
+		<td>57</td>
+		<td>F57</td>
+		</tr>
+		<tr>
+		<td>64</td>
+		<td>F64</td>
+		</tr>
+		<tr>
+		<td>72</td>
+		<td>F72</td>
+		</tr>
+		<tr>
+		<td>81</td>
+		<td>F81</td>
+		</tr>
+		<tr>
+		<td>91</td>
+		<td>F91</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td></td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td></td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Metering</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>AE</td>
+		<td>Metering (Method of metering subject brightness)</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>AE_CENTER</td>
+		<td>Center weighted averaging metering<br>This metering mode provides the average metering between the subject and the background lighting, placing more weight on
+the subject at the center.</td>
+		</tr>
+		<tr>
+		<td>AE_ESP</td>
+		<td>Digital ESP metering<br>The camera meters exposure in 324 areas of the frame and optimizes exposure for the current scene or portrait subject.
+This mode is recommended for general use.</td>
+		</tr>
+		<tr>
+		<td>AE_PINPOINT</td>
+		<td>Spot metering<br>Choose this option to meter a small area (about
+2% of the frame) with the camera pointed at the object you wish to meter. Exposure will be
+adjusted according to the brightness at the metered point. Default metering point is the center of frame, and you can select arbitarary point using API.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Shooting Mode</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>TAKEMODE</td>
+		<td>Shooting mode<br>NOTE) If changed, auto focus and auto exposure are unlocked.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>M</td>
+		<td>Manual mode (mode M)<br>You choose both the aperture and the shutter speed.</td>
+		</tr>
+		<tr>
+		<td>P</td>
+		<td>Program mode (mode P)<br>The camera automatically adjusts shutter speed and aperture in response
+to subject brightness.</td>
+		</tr>
+		<tr>
+		<td>A</td>
+		<td>Aperture-priority mode (mode A)<br>You choose the aperture and let the camera automatically adjust shutter speed for optimal exposure.</td>
+		</tr>
+		<tr>
+		<td>S</td>
+		<td>Shutter-priority mode (mode S)<br>You choose the shutter speed and let the camera automatically adjust aperture for optimal exposure.</td>
+		</tr>
+		<tr>
+		<td>iAuto</td>
+		<td>iAuto<br>Taking pictures with automatically-optimized settings suitable for current scene.</td>
+		</tr>
+		<tr>
+		<td>ART</td>
+		<td>Art Filter mode<br>Art filters allow you to control various creative effects, transforming your photography into works of art. They are built right into the camera.</td>
+		</tr>
+		<tr>
+		<td>movie</td>
+		<td>Movie mode<br>Movie mode can be used to film movies.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>ISO Sensitivity</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>ISO</td>
+		<td>ISO sensitivity</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>Auto</td>
+		<td>Auto</td>
+		</tr>
+		<tr>
+		<td>Low</td>
+		<td>Low (equivalent to ISO 100)</td>
+		</tr>
+		<tr>
+		<td>200</td>
+		<td>ISO 200</td>
+		</tr>
+		<tr>
+		<td>250</td>
+		<td>ISO 250</td>
+		</tr>
+		<tr>
+		<td>320</td>
+		<td>ISO 320</td>
+		</tr>
+		<tr>
+		<td>400</td>
+		<td>ISO 400</td>
+		</tr>
+		<tr>
+		<td>500</td>
+		<td>ISO 500</td>
+		</tr>
+		<tr>
+		<td>640</td>
+		<td>ISO 640</td>
+		</tr>
+		<tr>
+		<td>800</td>
+		<td>ISO 800</td>
+		</tr>
+		<tr>
+		<td>1000</td>
+		<td>ISO 1000</td>
+		</tr>
+		<tr>
+		<td>1250</td>
+		<td>ISO 1250</td>
+		</tr>
+		<tr>
+		<td>1600</td>
+		<td>ISO 1600</td>
+		</tr>
+		<tr>
+		<td>2000</td>
+		<td>ISO 2000</td>
+		</tr>
+		<tr>
+		<td>2500</td>
+		<td>ISO 2500</td>
+		</tr>
+		<tr>
+		<td>3200</td>
+		<td>ISO 3200</td>
+		</tr>
+		<tr>
+		<td>4000</td>
+		<td>ISO 4000</td>
+		</tr>
+		<tr>
+		<td>5000</td>
+		<td>ISO 5000</td>
+		</tr>
+		<tr>
+		<td>6400</td>
+		<td>ISO 6400</td>
+		</tr>
+		<tr>
+		<td>8000</td>
+		<td>ISO 8000</td>
+		</tr>
+		<tr>
+		<td>10000</td>
+		<td>ISO 10000</td>
+		</tr>
+		<tr>
+		<td>12800</td>
+		<td>ISO 12800</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Exposure Compensation</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>EXPREV</td>
+		<td>Exposure compensation</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>-5.0</td>
+		<td>-5.0</td>
+		</tr>
+		<tr>
+		<td>-4.7</td>
+		<td>-4.7</td>
+		</tr>
+		<tr>
+		<td>-4.3</td>
+		<td>-4.3</td>
+		</tr>
+		<tr>
+		<td>-4.0</td>
+		<td>-4.0</td>
+		</tr>
+		<tr>
+		<td>-3.7</td>
+		<td>-3.7</td>
+		</tr>
+		<tr>
+		<td>-3.3</td>
+		<td>-3.3</td>
+		</tr>
+		<tr>
+		<td>-3.0</td>
+		<td>-3.0</td>
+		</tr>
+		<tr>
+		<td>-2.7</td>
+		<td>-2.7</td>
+		</tr>
+		<tr>
+		<td>-2.3</td>
+		<td>-2.3</td>
+		</tr>
+		<tr>
+		<td>-2.0</td>
+		<td>-2.0</td>
+		</tr>
+		<tr>
+		<td>-1.7</td>
+		<td>-1.7</td>
+		</tr>
+		<tr>
+		<td>-1.3</td>
+		<td>-1.3</td>
+		</tr>
+		<tr>
+		<td>-1.0</td>
+		<td>-1.0</td>
+		</tr>
+		<tr>
+		<td>-0.7</td>
+		<td>-0.7</td>
+		</tr>
+		<tr>
+		<td>-0.3</td>
+		<td>-0.3</td>
+		</tr>
+		<tr>
+		<td>0.0</td>
+		<td>0.0</td>
+		</tr>
+		<tr>
+		<td>+0.3</td>
+		<td>+0.3</td>
+		</tr>
+		<tr>
+		<td>+0.7</td>
+		<td>+0.7</td>
+		</tr>
+		<tr>
+		<td>+1.0</td>
+		<td>+1.0</td>
+		</tr>
+		<tr>
+		<td>+1.3</td>
+		<td>+1.3</td>
+		</tr>
+		<tr>
+		<td>+1.7</td>
+		<td>+1.7</td>
+		</tr>
+		<tr>
+		<td>+2.0</td>
+		<td>+2.0</td>
+		</tr>
+		<tr>
+		<td>+2.3</td>
+		<td>+2.3</td>
+		</tr>
+		<tr>
+		<td>+2.7</td>
+		<td>+2.7</td>
+		</tr>
+		<tr>
+		<td>+3.0</td>
+		<td>+3.0</td>
+		</tr>
+		<tr>
+		<td>+3.3</td>
+		<td>+3.3</td>
+		</tr>
+		<tr>
+		<td>+3.7</td>
+		<td>+3.7</td>
+		</tr>
+		<tr>
+		<td>+4.0</td>
+		<td>+4.0</td>
+		</tr>
+		<tr>
+		<td>+4.3</td>
+		<td>+4.3</td>
+		</tr>
+		<tr>
+		<td>+4.7</td>
+		<td>+4.7</td>
+		</tr>
+		<tr>
+		<td>+5.0</td>
+		<td>+5.0</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Drive Mode</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>TAKE_DRIVE</td>
+		<td>Drive mode<br>Switch between normal shooting and continuous shooting.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>DRIVE_NORMAL</td>
+		<td>Normal shooting mode<br>Shoots one frame at a time.</td>
+		</tr>
+		<tr>
+		<td>DRIVE_CONTINUE</td>
+		<td>Continuous shooting mode<br>Photographs are taken at the frame speed specified in CONTINUOUS_SHOOTING_VELOCITY property.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Aspect Ratio</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>ASPECT_RATIO</td>
+		<td>Aspect ratio of image<br>NOTE) If changed, auto focus and auto exposure are unlocked.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>04_03</td>
+		<td>Changes aspect ratio to 4:3 </td>
+		</tr>
+		<tr>
+		<td>03_02</td>
+		<td>Changes aspect ratio to 3:2</td>
+		</tr>
+		<tr>
+		<td>16_09</td>
+		<td>Changes aspect ratio to 16:9</td>
+		</tr>
+		<tr>
+		<td>03_04</td>
+		<td>Changes aspect ratio to 3:4</td>
+		</tr>
+		<tr>
+		<td>06_06</td>
+		<td>Changes aspect ratio to 1:1</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Shutter Speed</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>SHUTTER</td>
+		<td>Shutter speed</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>4"</td>
+		<td>4 sec</td>
+		</tr>
+		<tr>
+		<td>3.2"</td>
+		<td>3.2 sec</td>
+		</tr>
+		<tr>
+		<td>2.5"</td>
+		<td>2.5 sec</td>
+		</tr>
+		<tr>
+		<td>2"</td>
+		<td>2 sec</td>
+		</tr>
+		<tr>
+		<td>1.6"</td>
+		<td>1.6 sec</td>
+		</tr>
+		<tr>
+		<td>1.3"</td>
+		<td>1.3 sec</td>
+		</tr>
+		<tr>
+		<td>1"</td>
+		<td>1 sec</td>
+		</tr>
+		<tr>
+		<td>1.3</td>
+		<td>1/1.3 sec</td>
+		</tr>
+		<tr>
+		<td>1.6</td>
+		<td>1/1.6 sec</td>
+		</tr>
+		<tr>
+		<td>2</td>
+		<td>1/2 sec</td>
+		</tr>
+		<tr>
+		<td>2.5</td>
+		<td>1/2.5 sec</td>
+		</tr>
+		<tr>
+		<td>3</td>
+		<td>1/3 sec</td>
+		</tr>
+		<tr>
+		<td>4</td>
+		<td>1/4 sec</td>
+		</tr>
+		<tr>
+		<td>5</td>
+		<td>1/5 sec</td>
+		</tr>
+		<tr>
+		<td>6</td>
+		<td>1/6 sec</td>
+		</tr>
+		<tr>
+		<td>8</td>
+		<td>1/8 sec</td>
+		</tr>
+		<tr>
+		<td>10</td>
+		<td>1/10 sec</td>
+		</tr>
+		<tr>
+		<td>13</td>
+		<td>1/13 sec</td>
+		</tr>
+		<tr>
+		<td>15</td>
+		<td>1/15 sec</td>
+		</tr>
+		<tr>
+		<td>20</td>
+		<td>1/20 sec</td>
+		</tr>
+		<tr>
+		<td>25</td>
+		<td>1/25 sec</td>
+		</tr>
+		<tr>
+		<td>30</td>
+		<td>1/30 sec</td>
+		</tr>
+		<tr>
+		<td>40</td>
+		<td>1/40 sec</td>
+		</tr>
+		<tr>
+		<td>50</td>
+		<td>1/50 sec</td>
+		</tr>
+		<tr>
+		<td>60</td>
+		<td>1/60 sec</td>
+		</tr>
+		<tr>
+		<td>80</td>
+		<td>1/80 sec</td>
+		</tr>
+		<tr>
+		<td>100</td>
+		<td>1/100 sec</td>
+		</tr>
+		<tr>
+		<td>125</td>
+		<td>1/125 sec</td>
+		</tr>
+		<tr>
+		<td>160</td>
+		<td>1/160 sec</td>
+		</tr>
+		<tr>
+		<td>200</td>
+		<td>1/200 sec</td>
+		</tr>
+		<tr>
+		<td>250</td>
+		<td>1/250 sec</td>
+		</tr>
+		<tr>
+		<td>320</td>
+		<td>1/320 sec</td>
+		</tr>
+		<tr>
+		<td>400</td>
+		<td>1/400 sec</td>
+		</tr>
+		<tr>
+		<td>500</td>
+		<td>1/500 sec</td>
+		</tr>
+		<tr>
+		<td>640</td>
+		<td>1/640 sec</td>
+		</tr>
+		<tr>
+		<td>800</td>
+		<td>1/800 sec</td>
+		</tr>
+		<tr>
+		<td>1000</td>
+		<td>1/1000 sec</td>
+		</tr>
+		<tr>
+		<td>1250</td>
+		<td>1/1250 sec</td>
+		</tr>
+		<tr>
+		<td>1600</td>
+		<td>1/1600 sec</td>
+		</tr>
+		<tr>
+		<td>2000</td>
+		<td>1/2000 sec</td>
+		</tr>
+		<tr>
+		<td>2500</td>
+		<td>1/2500 sec</td>
+		</tr>
+		<tr>
+		<td>3200</td>
+		<td>1/3200 sec</td>
+		</tr>
+		<tr>
+		<td>4000</td>
+		<td>1/4000 sec</td>
+		</tr>
+		<tr>
+		<td>5000</td>
+		<td>1/5000 sec</td>
+		</tr>
+		<tr>
+		<td>6400</td>
+		<td>1/6400 sec</td>
+		</tr>
+		<tr>
+		<td>8000</td>
+		<td>1/8000 sec</td>
+		</tr>
+		<tr>
+		<td>10000</td>
+		<td>1/10000 sec</td>
+		</tr>
+		<tr>
+		<td>12800</td>
+		<td>1/12800 sec</td>
+		</tr>
+		<tr>
+		<td>16000</td>
+		<td>1/16000 sec</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Continuous Shooting Speed</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>CONTINUOUS_SHOOTING_VELOCITY</td>
+		<td>Continuous shooting speed</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>1</td>
+		<td>1fps</td>
+		</tr>
+		<tr>
+		<td>2</td>
+		<td>2fps</td>
+		</tr>
+		<tr>
+		<td>3</td>
+		<td>3fps</td>
+		</tr>
+		<tr>
+		<td>4</td>
+		<td>4fps</td>
+		</tr>
+		<tr>
+		<td>5</td>
+		<td>5fps</td>
+		</tr>
+		<tr>
+		<td>6</td>
+		<td>6fps</td>
+		</tr>
+		<tr>
+		<td>7</td>
+		<td>7fps</td>
+		</tr>
+		<tr>
+		<td>8</td>
+		<td>8fps</td>
+		</tr>
+		<tr>
+		<td>9</td>
+		<td>9fps</td>
+		</tr>
+		<tr>
+		<td>10</td>
+		<td>10fps</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Shooting Mode for Movie</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>EXPOSE_MOVIE_SELECT</td>
+		<td>Shooting mode for movie</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>P</td>
+		<td>Program mode (mode P)<br>The camera automatically adjusts shutter speed and aperture in response
+to subject brightness.</td>
+		</tr>
+		<tr>
+		<td>A</td>
+		<td>Aperture-priority mode (mode A)<br>You choose the aperture and let the camera automatically adjust shutter speed for optimal exposure.</td>
+		</tr>
+		<tr>
+		<td>S</td>
+		<td>Shutter-priority mode (mode S)<br>You choose the shutter speed and let the camera automatically adjust aperture for optimal exposure.</td>
+		</tr>
+		<tr>
+		<td>M</td>
+		<td>Manual mode (mode M)<br>You choose both the aperture and the shutter speed.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>AE Lock</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>AE_LOCK_STATE</td>
+		<td>Toggles auto exposure lock</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>LOCK</td>
+		<td>Exposure lock (AE Lock) ON</td>
+		</tr>
+		<tr>
+		<td>UNLOCK</td>
+		<td>Exposure lock (AE Lock) OFF</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Read Only</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+<h3>b. Image Quality and Save</h3>
+	<h4>Image Size</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>IMAGESIZE</td>
+		<td>Saved image size (height x width) when aspect ratio is 4:3. When aspect ratio is other than 4:3, image size is adjusted to maximum size inside the specified rectangle.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>4608x3456</td>
+		<td>4608x3456</td>
+		</tr>
+		<tr>
+		<td>3200x2400</td>
+		<td>3200x2400</td>
+		</tr>
+		<tr>
+		<td>2560x1920</td>
+		<td>2560x1920</td>
+		</tr>
+		<tr>
+		<td>1920x1440</td>
+		<td>1920x1440</td>
+		</tr>
+		<tr>
+		<td>1600x1200</td>
+		<td>1600x1200</td>
+		</tr>
+		<tr>
+		<td>1280x960</td>
+		<td>1280x960</td>
+		</tr>
+		<tr>
+		<td>1024x768</td>
+		<td>1024x768</td>
+		</tr>
+		<tr>
+		<td>640x480</td>
+		<td>640x480</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>RAW Image Saving</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>RAW</td>
+		<td>Enables/disables saving RAW image</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>OFF<br>RAW image is not saved. Only JPEG image is saved.
+</td>
+		</tr>
+		<tr>
+		<td>ON</td>
+		<td>ON<br>Both RAW and JPEG images are saved.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>JPEG Compression Ratio</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>COMPRESSIBILITY_RATIO</td>
+		<td>Compression ratio of JPEG image</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>CMP_2_7</td>
+		<td>Super Fine</td>
+		</tr>
+		<tr>
+		<td>CMP_4</td>
+		<td>Fine</td>
+		</tr>
+		<tr>
+		<td>CMP_8</td>
+		<td>Normal</td>
+		</tr>
+		<tr>
+		<td>CMP_12</td>
+		<td>Basic</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Movie Quality</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE</td>
+		<td>Movie quality</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE_FULL_HD_FINE</td>
+		<td>Full HD (MOV, 1920x1080, Fine Quality)</td>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE_FULL_HD_NORMAL</td>
+		<td>Full HD (MOV, 1920x1080, Normal Quality)</td>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE_HD_FINE</td>
+		<td>HD (MOV, 1280x720, Fine Quality)</td>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE_HD_NORMAL</td>
+		<td>HD (MOV, 1280x720, Normal Quality)</td>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE_SHORT_MOVIE</td>
+		<td>Clip Full HD (1920x1080)<br>The camera automatically stops recording after a specified time. The recording time is specified with QUALITY_MOVIE_SHORT_MOVIE_RECORD_TIME property.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Image Saving Destination</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>DESTINATION_FILE</td>
+		<td>Image saving destination</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>DESTINATION_FILE_MEDIA</td>
+		<td>Stores a captured image to memory card inside of the camera. The image is not transferred to a mobile device.</td>
+		</tr>
+		<tr>
+		<td>DESTINATION_FILE_WIFI</td>
+		<td>Transfers a captured image to a mobile device without storing in memory.This setting is valid when TAKE_DRIVE property is set to DRIVE_NORMAL. The camera retains the image for 60 seconds and removes it.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>Clip Recording Time</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>QUALITY_MOVIE_SHORT_MOVIE_RECORD_TIME</td>
+		<td>Recording time of Clip<br> Duration in seconds for movie when QUALITY_MOVIE property is set to QUALITY_MOVIE_SHORT_MOVIE.  Camera automatically stops recording after this time.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>1</td>
+		<td>1 sec</td>
+		</tr>
+		<tr>
+		<td>2</td>
+		<td>2 sec</td>
+		</tr>
+		<tr>
+		<td>3</td>
+		<td>3 sec</td>
+		</tr>
+		<tr>
+		<td>4</td>
+		<td>4 sec</td>
+		</tr>
+		<tr>
+		<td>5</td>
+		<td>5 sec</td>
+		</tr>
+		<tr>
+		<td>6</td>
+		<td>6 sec</td>
+		</tr>
+		<tr>
+		<td>7</td>
+		<td>7 sec</td>
+		</tr>
+		<tr>
+		<td>8</td>
+		<td>8 sec</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+<h3>c. Focusing</h3>
+	<h4>Focusing Mode for Still Image</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>FOCUS_STILL</td>
+		<td>Focusing mode of still image shooting</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>FOCUS_MF</td>
+		<td>Manual focus<br>This function allows you to manually focus on any subject. Focus adjustment is performed using focus ring of lens.</td>
+		</tr>
+		<tr>
+		<td>FOCUS_SAF</td>
+		<td>Single auto focus<br>The camera focuses once automatically.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>AF Lock</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>AF_LOCK_STATE</td>
+		<td>Toggles auto focus lock</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>LOCK</td>
+		<td>Focus lock (AF Lock) ON</td>
+		</tr>
+		<tr>
+		<td>UNLOCK</td>
+		<td>Focus lock (AF Lock) OFF</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Read Only</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Full-time AF</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>FULL_TIME_AF</td>
+		<td>Enables/disables full-time auto focus<br> Full-time auto focus feature  continues to focus even 
+when the shutter button is not pressed halfway.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>Disables full-time auto focus</td>
+		</tr>
+		<tr>
+		<td>ON</td>
+		<td>Enables full-time auto focus</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Focusing Mode for Movie</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>FOCUS_MOVIE</td>
+		<td>Focusing mode of movie recording</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>FOCUS_MF</td>
+		<td>Manual focus<br>This function allows you to manually focus on any subject. Focus adjustment is performed using focus ring of lens.</td>
+		</tr>
+		<tr>
+		<td>FOCUS_SAF</td>
+		<td>Single auto focus<br>The camera focuses once automatically.</td>
+		</tr>
+		<tr>
+		<td>FOCUS_CAF</td>
+		<td>Continuous auto focus<br>The camera performs tracking of the subject and repeats focusing automatically. Even if the subject moves or you change the composition of the picture, the camera continues trying to focus.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+<h3>e. Support</h3>
+	<h4>Face Detection</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>FACE_SCAN</td>
+		<td>Camera detects faces automatically and performs focusing and Digital ESP (Electro-Selective Pattern)
+metering.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>FACE_SCAN_OFF</td>
+		<td>Disables face priority auto focus.</td>
+		</tr>
+		<tr>
+		<td>FACE_SCAN_ON</td>
+		<td>Enables face priority auto focus. Performs auto focus at face-detected point.</td>
+		</tr>
+		<tr>
+		<td>FACE_SCAN_NEAR</td>
+		<td>Enables auto focus with near eye detection.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td></td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>IS Focal Length</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>ANTI_SHAKE_FOCAL_LENGTH</td>
+		<td>Focal Length for Image Stabilization<br>Focal length information to stabilize the camera when shooting with lenses that are not part of the Micro Four Thirds System. If the desired value is not in the list, select the closest value. This property is not valid for Micro Four Thirds system lenses.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>8</td>
+		<td>8mm</td>
+		</tr>
+		<tr>
+		<td>9</td>
+		<td>9mm</td>
+		</tr>
+		<tr>
+		<td>10</td>
+		<td>10mm</td>
+		</tr>
+		<tr>
+		<td>12</td>
+		<td>12mm</td>
+		</tr>
+		<tr>
+		<td>15</td>
+		<td>15mm</td>
+		</tr>
+		<tr>
+		<td>16</td>
+		<td>16mm</td>
+		</tr>
+		<tr>
+		<td>18</td>
+		<td>18mm</td>
+		</tr>
+		<tr>
+		<td>21</td>
+		<td>21mm</td>
+		</tr>
+		<tr>
+		<td>24</td>
+		<td>24mm</td>
+		</tr>
+		<tr>
+		<td>28</td>
+		<td>28mm</td>
+		</tr>
+		<tr>
+		<td>30</td>
+		<td>30mm</td>
+		</tr>
+		<tr>
+		<td>35</td>
+		<td>35mm</td>
+		</tr>
+		<tr>
+		<td>40</td>
+		<td>40mm</td>
+		</tr>
+		<tr>
+		<td>48</td>
+		<td>48mm</td>
+		</tr>
+		<tr>
+		<td>50</td>
+		<td>50mm</td>
+		</tr>
+		<tr>
+		<td>55</td>
+		<td>55mm</td>
+		</tr>
+		<tr>
+		<td>65</td>
+		<td>65mm</td>
+		</tr>
+		<tr>
+		<td>70</td>
+		<td>70mm</td>
+		</tr>
+		<tr>
+		<td>75</td>
+		<td>75mm</td>
+		</tr>
+		<tr>
+		<td>80</td>
+		<td>80mm</td>
+		</tr>
+		<tr>
+		<td>85</td>
+		<td>85mm</td>
+		</tr>
+		<tr>
+		<td>90</td>
+		<td>90mm</td>
+		</tr>
+		<tr>
+		<td>100</td>
+		<td>100mm</td>
+		</tr>
+		<tr>
+		<td>105</td>
+		<td>105mm</td>
+		</tr>
+		<tr>
+		<td>120</td>
+		<td>120mm</td>
+		</tr>
+		<tr>
+		<td>135</td>
+		<td>135mm</td>
+		</tr>
+		<tr>
+		<td>150</td>
+		<td>150mm</td>
+		</tr>
+		<tr>
+		<td>180</td>
+		<td>180mm</td>
+		</tr>
+		<tr>
+		<td>200</td>
+		<td>200mm</td>
+		</tr>
+		<tr>
+		<td>210</td>
+		<td>210mm</td>
+		</tr>
+		<tr>
+		<td>250</td>
+		<td>250mm</td>
+		</tr>
+		<tr>
+		<td>300</td>
+		<td>300mm</td>
+		</tr>
+		<tr>
+		<td>350</td>
+		<td>350mm</td>
+		</tr>
+		<tr>
+		<td>400</td>
+		<td>400mm</td>
+		</tr>
+		<tr>
+		<td>500</td>
+		<td>500mm</td>
+		</tr>
+		<tr>
+		<td>600</td>
+		<td>600mm</td>
+		</tr>
+		<tr>
+		<td>800</td>
+		<td>800mm</td>
+		</tr>
+		<tr>
+		<td>1000</td>
+		<td>1000mm</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>AF Touch Area (Upper-Left)</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>TOUCH_EFFECTIVE_AREA_UPPER_LEFT</td>
+		<td>Upper-left coordinate of valid area on live view image to specify auto focus point.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		<th>Coordinate System</th>
+		</tr>
+		<tr>
+		<td>*</td>
+		<td>Upper left coordinate of touch area in the form of "XXXXYYYY"</td>
+		<td>
+<img src="../img/toucharea/touch_area.png"/>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>AF Touch Area (Lower-Right)</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>TOUCH_EFFECTIVE_AREA_LOWER_RIGHT</td>
+		<td>Lower-right coordinate of valid area on live view image to specify auto focus point.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		<th>Coordinate System</th>
+		</tr>
+		<tr>
+		<td>*</td>
+		<td>Lower right coordinate of touch area in the form of "XXXXYYYY"</td>
+		<td>
+<img src="../img/toucharea/touch_area.png"/>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Image Preview</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>RECVIEW</td>
+		<td>Toggles generation of preview image after taking picture.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>ON</td>
+		<td>Generates preview image</td>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>Does not generate preview image</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		</table>
+	</div>
+	<h4>AE Touch Area (Upper-Left)</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>TOUCH_AE_EFFECTIVE_AREA_UPPER_LEFT</td>
+		<td>Upper-left coordinate of valid area on live view image to specify auto exposure point.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		<th>Coordinate System</th>
+		</tr>
+		<tr>
+		<td>*</td>
+		<td>Upper left coordinate of touch area in the form of "XXXXYYYY"</td>
+		<td>
+<img src="../img/toucharea/touch_area.png"/>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>AE Touch Area (Lower-Right)</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>TOUCH_AE_EFFECTIVE_AREA_LOWER_RIGHT</td>
+		<td>Lower-right coordinate of valid area on live view image to specify auto exposure point.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		<th>Coordinate System</th>
+		</tr>
+		<tr>
+		<td>*</td>
+		<td>Lower right coordinate of touch area in the form of "XXXXYYYY"</td>
+		<td>
+<img src="../img/toucharea/touch_area.png"/>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Lens IS Priority</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>LENS_PRIORITY_ANTI_SHAKE</td>
+		<td>Lens Image Stabilization Priority<br>If ON, lens stabilizer has priority.  This property is valid for a lens with the image stabilizer function and the lens has no IS switch (toggle switch). If a lens has the switch, the switch setting has priority regardless of this property value.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>OFF</td>
+		</tr>
+		<tr>
+		<td>ON</td>
+		<td>ON</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Movie IS</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>ANTI_SHAKE_MOVIE</td>
+		<td>Image Stabilization for Movie<br>Enables/disables image stabilization for movie recording</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>OFF</td>
+		</tr>
+		<tr>
+		<td>ON</td>
+		<td>ON<br>Image stabilization is enabled for recording movie. If image is adjusted, image is cropped. Crop area depends on amount of shaking.</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+<h3>z. Misc</h3>
+	<h4>Battery Level</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>BATTERY_LEVEL</td>
+		<td>Battery level</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>UNKNOWN</td>
+		<td>Not Detected</td>
+		</tr>
+		<tr>
+		<td>CHARGE</td>
+		<td>Charging</td>
+		</tr>
+		<tr>
+		<td>EMPTY</td>
+		<td>Battery Empty</td>
+		</tr>
+		<tr>
+		<td>WARNING</td>
+		<td>Battery Level Warning</td>
+		</tr>
+		<tr>
+		<td>LOW</td>
+		<td>Low Battery</td>
+		</tr>
+		<tr>
+		<td>FULL</td>
+		<td>Fully Charged</td>
+		</tr>
+		<tr>
+		<td>EMPTY_AC</td>
+		<td>Battery Empty with Power Supply</td>
+		</tr>
+		<tr>
+		<td>SUPPLY_WARNING</td>
+		<td>Battery Level Warning with Power Supply</td>
+		</tr>
+		<tr>
+		<td>SUPPLY_LOW</td>
+		<td>Low Battery with Power Supply</td>
+		</tr>
+		<tr>
+		<td>SUPPLY_FULL</td>
+		<td>Fully Charged with Power Supply</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Read Only</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Sound Volume</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>SOUND_VOLUME_LEVEL</td>
+		<td>Volume level of system sounds including shutter and alarm.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>Muted</td>
+		</tr>
+		<tr>
+		<td>1</td>
+		<td>1</td>
+		</tr>
+		<tr>
+		<td>2</td>
+		<td>2</td>
+		</tr>
+		<tr>
+		<td>3</td>
+		<td>3</td>
+		</tr>
+		<tr>
+		<td>4</td>
+		<td>4</td>
+		</tr>
+		<tr>
+		<td>5</td>
+		<td>5 (Max Volume)</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Wi-Fi SSID</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>SSID</td>
+		<td>Wi-Fi SSID</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>*</td>
+		<td>[Setting Value]</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read Only</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>GPS Tagging</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>GPS</td>
+		<td>GPS tagging<br>If turned ON, camera attaches geolocation information as EXIF tag to a captured still image after shooting. The geolocation information, which is generated by GPS sensor of mobile device, must be sent using API before shooting.</td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>OFF</td>
+		<td>Disable GPS Tagging</td>
+		</tr>
+		<tr>
+		<td>ON</td>
+		<td>Enable GPS Tagging</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Read/Write</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+	<h4>Wi-Fi Channel</h4>
+	<div class=propname>
+		<table>
+		<caption>Name and Function</caption>
+		<tr>
+		<th>Property Name</th>
+		<th>Function</th>
+		</tr>
+		<tr>
+		<td>WIFI_CH</td>
+		<td>Wi-Fi channel<br>Assigns Wi-Fi channel by auto scanning or manual setting using specified channel number from 1 through 11. </td>
+		</tr>
+		</table>
+	</div>
+	<div class=propvalue>
+		<table>
+		<caption>Property Value</caption>
+		<tr>
+		<th>Property Value</th>
+		<th>Description</th>
+		</tr>
+		<tr>
+		<td>AUTO</td>
+		<td>Auto Scanning</td>
+		</tr>
+		<tr>
+		<td>1</td>
+		<td>Channel 1</td>
+		</tr>
+		<tr>
+		<td>2</td>
+		<td>Channel 2</td>
+		</tr>
+		<tr>
+		<td>3</td>
+		<td>Channel 3</td>
+		</tr>
+		<tr>
+		<td>4</td>
+		<td>Channel 4</td>
+		</tr>
+		<tr>
+		<td>5</td>
+		<td>Channel 5</td>
+		</tr>
+		<tr>
+		<td>6</td>
+		<td>Channel 6</td>
+		</tr>
+		<tr>
+		<td>7</td>
+		<td>Channel 7</td>
+		</tr>
+		<tr>
+		<td>8</td>
+		<td>Channel 8</td>
+		</tr>
+		<tr>
+		<td>9</td>
+		<td>Channel 9</td>
+		</tr>
+		<tr>
+		<td>10</td>
+		<td>Channel 10</td>
+		</tr>
+		<tr>
+		<td>11</td>
+		<td>Channel 11</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=wifi>
+		<table>
+		<caption>Access Permission</caption>
+		<tr>
+		<th>Wi-Fi</th>
+		<th>Bluetooth Smart</th>
+		</tr>
+		<tr>
+		<tr>
+		<td>Read/Write</td>
+		<td>Not Supported</td>
+		</tr>
+		</table>
+	</div>
+
+	<div class=conflict>
+		<table>
+		<caption>Supported Shooting Mode</caption>
+		<tr>
+		<th>iAuto</th>
+		<th>P</th>
+		<th>A</th>
+		<th>S</th>
+		<th>M</th>
+		<th>ART</th>
+		<th>movieP</th>
+		<th>movieA</th>
+		<th>movieS</th>
+		<th>movieM</th>
+		</tr>
+		<tr>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		<td>OK</td>
+		</tr>
+		</table>
+	</div>
+<!---------------------------------------------------------->
+<!--PROPERTY LIST TO HERE-->
+<!---------------------------------------------------------->
+</div>
+</div> <!--div content-->
+<p height="100px"></p>
+</body>
+<script type="text/javascript" src="../js/footer.js"></script>
+</html>

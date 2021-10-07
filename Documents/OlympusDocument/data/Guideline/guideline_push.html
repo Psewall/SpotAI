@@ -1,0 +1,846 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link type="text/css" rel="stylesheet" href="../css/Olympus.css" />
+
+	<!-- Google Analytics-->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-52489644-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<title>Guideline for Handling Event Notification</title>
+
+</head>
+
+<body>
+<script type="text/javascript" src="../js/menu.js"></script>
+<div class="content">
+
+<!---------------------------------------------------------->
+<!--CONTENTS FROM HERE-->
+<!---------------------------------------------------------->
+
+
+
+<h1 id="guidelinesforhandlingeventnotifications">Guidelines for Handling Event Notifications</h1>
+
+<p>The camera sends a notification to application when processing status or camera status changes. This change is called an &#8220;event&#8221;. Events are asynchronous notifications, which means events occur regardless of application status. Application can continue processing while waiting for a notification. Application does not need to handle all event notifications from the camera. However, proper event handling creates better user experiences for your application.</p>
+
+<p>There are two cases where the camera issues an event.</p>
+
+<ol>
+<li>Change in status of camera itself regardless of API method called by user</li>
+<li>Change in progress of processing according to API method called by user</li>
+</ol>
+
+<h2 id="１．eventofstatusofcameraitself">１．Event of status of camera itself</h2>
+
+<p>The camera notifies the change of status of itself regardless of API method called by user.</p>
+
+<h4 id="category1">Category 1</h4>
+
+<ul>
+<li>Generated captured image or preview image</li>
+<li>Stopped driving zoom lens</li>
+<li>Disconnected network</li>
+<li>Updated live view image</li>
+<li>Updated result of focusing</li>
+<li>Stopped recording movie due to the camera, e.g., media has no capacity to record.</li>
+</ul>
+
+<h4 id="category2">Category 2</h4>
+
+<ul>
+<li>Updated camera property</li>
+</ul>
+
+<h4 id="category3">Category 3</h4>
+
+<ul>
+<li>Status of media was changed, e.g., remaining media capacity, mount status, and access status.</li>
+<li>Status of lens was changed, e.g., focal length.</li>
+<li>Updated shooting parameter</li>
+<li>Detected face</li>
+<li>Updated status of level gauge</li>
+<li>Reached high temperature</li>
+<li>Entered extended ISO range</li>
+<li>Could not decide exposure parameter corresponding to exposure value</li>
+<li>Subject was too bright or too dark to measure</li>
+</ul>
+
+<h3 id="ios">iOS</h3>
+
+<h4 id="category１">Category １</h4>
+
+<ul>
+<li>Implement a protocol corresponding to an event you would like to receive, and the following delegate method notifies the event.</li>
+<li>See API reference for more details.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Protocol</th>
+	<th style="text-align:left;">Delegate Method</th>
+	<th style="text-align:left;">Event</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">OLYCameraRecordingSupportsDelegate</td>
+	<td style="text-align:left;">camera:didReceiveCapturedImage(Preview):metadata:</td>
+	<td style="text-align:left;">Generated captured image or preview image</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCameraRecordingSupportsDelegate</td>
+	<td style="text-align:left;">cameraDidStopDrivingZoomLens:</td>
+	<td style="text-align:left;">Stopped driving zoom lens</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCameraConnectionDelegate</td>
+	<td style="text-align:left;">camera:disconnectedByError:</td>
+	<td style="text-align:left;">Disconnected network</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCameraLiveViewDelegate</td>
+	<td style="text-align:left;">camera:didUpdateLiveView:</td>
+	<td style="text-align:left;">Updated live view image</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCameraRecordingDelegate</td>
+	<td style="text-align:left;">camera:didChangeAutoFocusResult:</td>
+	<td style="text-align:left;">Updated result of focusing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCameraRecordingDelegate</td>
+	<td style="text-align:left;">cameraDidStopRecordingVideo:</td>
+	<td style="text-align:left;">Stopped recording movie due to the camera</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4 id="category２">Category ２</h4>
+
+<ul>
+<li>Implement OLYCameraPropertyDelegate protocol to monitor change of camera property, and the following delegate method notifies updated property.</li>
+<li>See API reference for more details.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Protocol</th>
+	<th style="text-align:left;">Delegate Method</th>
+	<th style="text-align:left;">Event</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">OLYCameraPropertyDelegate</td>
+	<td style="text-align:left;">camera:didChangeCameraProperty:</td>
+	<td style="text-align:left;">Updated camera property</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>Note that the camera does not notify of all changes to camera properties.</li>
+<li>Event is notified when camera property itself is updated or when the range of property values changes.</li>
+<li>The table below shows major properties to be notified upon update or notification timing.</li>
+</ul>
+<div class="table-desc-2">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Camera Property</th>
+	<th style="text-align:left;">Notification Timing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">BATTERY_LEVEL</td>
+	<td style="text-align:left;">Battery power fell below a threshold.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">SHUTTER</td>
+	<td style="text-align:left;">Range of property value was changed. Upper limit of shutter speed changes according to ISO sensitivity.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">APERTURE</td>
+	<td style="text-align:left;">Range of property value was changed. Maximum aperture value changes according to zoom factor.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">EXPREV</td>
+	<td style="text-align:left;">Range of property value was changed. +&#8211;5EV for still images, +&#8211;3EV for movies.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">AF_LOCK_STATE</td>
+	<td style="text-align:left;">Auto focus lock was released.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">AE_LOCK_STATE</td>
+	<td style="text-align:left;">Auto exposure lock was released.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">FOCUS_STILL, FOCUS_MOVIE</td>
+	<td style="text-align:left;">Focus mode was changed by sliding focus ring of lens that supports snapshot focus.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4 id="category３">Category ３</h4>
+
+<ul>
+<li>SDK provides no interface to notify events in this category directly.</li>
+<li>Instead SDK has Objective-C property to retain information on camera status. Application can detect event using Key-Value Observing to monitor corresponding Objective-C property.</li>
+<li>The table below shows Objective-C property corresponding to the event in this category.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Objective−C Property</th>
+	<th style="text-align:left;">Category of OLYCamera Class</th>
+	<th style="text-align:left;">Notification Timing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">mediaMountStatus</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;">Status of media was changed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">mediaBusy</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">mediaError</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">remainingImageCapacity</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">remainingVideoCapacity</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">lensMountStatus</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;">Status of lens was changed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualFocalLength</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">minimumFocalLength</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">maximumFocalLength</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualAutoFocusPoint</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;">Updated shooting parameter</td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualApertureValue</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualShutterSpeed</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualExposureCompensation</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualIsoSensitivity</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">detectedHumanFaces</td>
+	<td style="text-align:left;">RecordingSupports</td>
+	<td style="text-align:left;">Detected face</td>
+</tr>
+<tr>
+	<td style="text-align:left;">digitalSpiritLevel</td>
+	<td style="text-align:left;">RecordingSupports</td>
+	<td style="text-align:left;">Updated status of level gauge</td>
+</tr>
+<tr>
+	<td style="text-align:left;">highTemperatureWarning</td>
+	<td style="text-align:left;">CameraSystem</td>
+	<td style="text-align:left;">Reached high temperature</td>
+</tr>
+<tr>
+	<td style="text-align:left;">actualIsoSensitivityWarning</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;">Entered extended ISO range. Image taken in the extended ISO range may not meet a certain standard of quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">exposureWarning</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;">Could not decide exposure parameter corresponding to exposure value</td>
+</tr>
+<tr>
+	<td style="text-align:left;">exposureMeteringWarning</td>
+	<td style="text-align:left;">Recording</td>
+	<td style="text-align:left;">Subject was too bright or too dark to measure</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<hr />
+
+<p>NOTE）Objective-C property is totally different from camera property to configure camera settings.</p>
+
+<h3 id="android">Android</h3>
+
+<h4 id="category１">Category １</h4>
+
+<ul>
+<li>Implement listener interface corresponding to an event you would like to receive, and the following event handler method notifies the event.</li>
+<li>See API reference for more details.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Listener Interface</th>
+	<th style="text-align:left;">Handler Method</th>
+	<th style="text-align:left;">Event</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">OLYCamera.RecordingSupportsListener</td>
+	<td style="text-align:left;">onReceiveCapturedImage(Preview)</td>
+	<td style="text-align:left;">Generated captured image or a preview image</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCamera.RecordingSupportsListener</td>
+	<td style="text-align:left;">onStopDrivingZoomLens</td>
+	<td style="text-align:left;">Stopped driving zoom lens</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCamera.ConnectionListener</td>
+	<td style="text-align:left;">onDisconnectedByError</td>
+	<td style="text-align:left;">Disconnected network</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCamera.LiveViewListener</td>
+	<td style="text-align:left;">onUpdateLiveImage</td>
+	<td style="text-align:left;">Updated live view image</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCamera.RecordingListener</td>
+	<td style="text-align:left;">onChangeAutoFocusResult</td>
+	<td style="text-align:left;">Updated result of focusing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">OLYCamera.RecordingListener</td>
+	<td style="text-align:left;">onStopRecordingVideo</td>
+	<td style="text-align:left;">Stopped recording movie due to the camera</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4 id="category2">Category 2</h4>
+
+<ul>
+<li>Implement OLYCameraPropertyListener interface to monitor change to camera property, and the following event handler method notifies updated property.</li>
+<li>See API reference for more details.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Listener Interface</th>
+	<th style="text-align:left;">Handler Method</th>
+	<th style="text-align:left;">Event</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">OLYCameraPropertyListener</td>
+	<td style="text-align:left;">onUpdateCameraProperty</td>
+	<td style="text-align:left;">Updated camera property</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>Note that the camera does not notify of all changes to camera properties.</li>
+<li>Event is notified when camera property itself is updated or when the range of property values changes.</li>
+<li>The table below shows major properties to be notified upon update or notification timing.</li>
+</ul>
+<div class="table-desc-2">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Camera Property</th>
+	<th style="text-align:left;">Notification Timing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_BATTERY_LEVEL</td>
+	<td style="text-align:left;">Battery power fell below a threshold.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_SHUTTER</td>
+	<td style="text-align:left;">Range of property value changed. Upper limit of shutter speed changes according to ISO sensitivity.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_APERTURE</td>
+	<td style="text-align:left;">Range of property value changed. Maximum aperture value changes according to zoom factor.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_EXPREV</td>
+	<td style="text-align:left;">Range of property value changed. +&#8211;5EV for still images, +&#8211;3EV for movies.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_AF_LOCK_STATE</td>
+	<td style="text-align:left;">Auto focus lock was released.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_AE_LOCK_STATE</td>
+	<td style="text-align:left;">Auto exposure lock was released.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">CAMERA_PROPERTY_FOCUS_STILL<br>CAMERA_PROPERTY_FOCUS_MOVIE</td>
+	<td style="text-align:left;">Focus mode was changed by sliding focus ring of lens which supports snapshot focus.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4 id="category３">Category ３</h4>
+
+<ul>
+<li>Implement OLYCameraStatusListener interface to monitor changes to camera status in this category, and the following event handler method notifies updated status.</li>
+<li>See API reference for more details.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Listener Interface</th>
+	<th style="text-align:left;">Handler Method</th>
+	<th style="text-align:left;">Event</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">OLYCameraStatusListener</td>
+	<td style="text-align:left;">onUpdateStatus</td>
+	<td style="text-align:left;">Updated camera status</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<ul>
+<li>The table below shows the name of camera status corresponding to notified event and methods to acquire camera status.</li>
+</ul>
+<div class="table-desc-3">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Camera Status to be notified</th>
+	<th style="text-align:left;">Get Method in OLYCamera Class</th>
+	<th style="text-align:left;">Notification Timing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">MediaMountStatus</td>
+	<td style="text-align:left;">getMediaMountStatus</td>
+	<td style="text-align:left;">Status of media was changed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">MediaBusy</td>
+	<td style="text-align:left;">isMediaBusy</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">MediaError</td>
+	<td style="text-align:left;">isMediaError</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">RemainingImageCapacity</td>
+	<td style="text-align:left;">getRemainingImageCapacity</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">RemainingVideoCapacity</td>
+	<td style="text-align:left;">getRemainingVideoCapacity</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">LensMountStatus</td>
+	<td style="text-align:left;">getLensMountStatus</td>
+	<td style="text-align:left;">Status of lens was changed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualFocalLength</td>
+	<td style="text-align:left;">getActualFocalLength</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">MinimumFocalLength</td>
+	<td style="text-align:left;">getMinimumFocalLength</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">MaximumFocalLength</td>
+	<td style="text-align:left;">getMaximumFocalLength</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualAutoFocusPoint</td>
+	<td style="text-align:left;">getActualAutoFocusPoint</td>
+	<td style="text-align:left;">Updated shooting parameter</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualApertureValue</td>
+	<td style="text-align:left;">getActualApertureValue</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualShutterSpeed</td>
+	<td style="text-align:left;">getActualShutterSpeed</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualExposureCompensation</td>
+	<td style="text-align:left;">getActualExposureCompensation</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualIsoSensitivity</td>
+	<td style="text-align:left;">getActualIsoSensitivity</td>
+	<td style="text-align:left;"></td>
+</tr>
+<tr>
+	<td style="text-align:left;">DetectedHumanFaces</td>
+	<td style="text-align:left;">getDetectedHumanFaces</td>
+	<td style="text-align:left;">Detected face</td>
+</tr>
+<tr>
+	<td style="text-align:left;">LevelGauge</td>
+	<td style="text-align:left;">getLevelGauge</td>
+	<td style="text-align:left;">Updated status of level gauge</td>
+</tr>
+<tr>
+	<td style="text-align:left;">HighTemperatureWarning</td>
+	<td style="text-align:left;">isHighTemperatureWarning</td>
+	<td style="text-align:left;">Reached high temperature</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ActualIsoSensitivityWarning</td>
+	<td style="text-align:left;">isActualIsoSensitivityWarning</td>
+	<td style="text-align:left;">Entered extended ISO range. Image taken in the extended ISO range may not meet a certain standard of quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ExposureWarning</td>
+	<td style="text-align:left;">isExposureWarning</td>
+	<td style="text-align:left;">Could not decide exposure parameter corresponding to exposure value</td>
+</tr>
+<tr>
+	<td style="text-align:left;">ExposureMeteringWarning</td>
+	<td style="text-align:left;">isExposureMeteringWarning</td>
+	<td style="text-align:left;">Subject was too bright or too dark to measure</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h2 id="２．eventofprogressofprocessing">２．Event of progress of processing</h2>
+
+<ul>
+<li>There are some cases where the camera notifies application of an event according to the status and progress of processing.</li>
+<li>Following three kinds of event handlers are called according to event.</li>
+<li>Each method handles 0&#8211;3 events according to its function.</li>
+</ul>
+<div class="table-desc-4">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Event</th>
+	<th style="text-align:left;">iOS</th>
+	<th style="text-align:left;">Android</th>
+	<th style="text-align:left;">Notification Timing</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Progress Notification</td>
+	<td style="text-align:left;">progressHandler</td>
+	<td style="text-align:left;">onProgress</td>
+	<td style="text-align:left;">Called once or multiple times according to the progress of processing.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Completion Notification</td>
+	<td style="text-align:left;">completionHandler</td>
+	<td style="text-align:left;">onCompleted</td>
+	<td style="text-align:left;">Called when process is finished. Result of processing generally is provided simultaneously.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Error Notification</td>
+	<td style="text-align:left;">errorHandler</td>
+	<td style="text-align:left;">onErrorOccurred</td>
+	<td style="text-align:left;">Called only when error occurs.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="handlerforprogressnotification">Handler for Progress Notification</h3>
+
+<ul>
+<li>Called once or multiple times according to the progress of processing.</li>
+</ul>
+
+<h4 id="example:takingpicture">Example: Taking Picture</h4>
+
+<ul>
+<li>Method to take picture handles the following progress notification
+
+<ul>
+<li>iOS: takePicture:progressHandler:completionHandler:errorHandler:</li>
+<li>Android: takePicuture(HashMap&lt; String, Object &gt;, OnTakePictureListener)</li>
+</ul></li>
+</ul>
+<div class="table-desc-1">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Progress Notification</th>
+	<th style="text-align:left;">iOS (enum OLYCameraTakingProgress)</th>
+	<th style="text-align:left;">Android (enum TakingProgress)</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Start Auto Focusing</td>
+	<td style="text-align:left;">OLYCameraTakingProgressBeginFocusing</td>
+	<td style="text-align:left;">BeginFocusing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Finish Auto Focusing</td>
+	<td style="text-align:left;">OLYCameraTakingProgressEndFocusing</td>
+	<td style="text-align:left;">EndFocusing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Ready to Capture</td>
+	<td style="text-align:left;">OLYCameraTakingProgressReadyCapturing</td>
+	<td style="text-align:left;">ReadyCapturing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Start Capturing<br> Streaming live view pauses immediately after this event occurs. Event to notify pausing live view is not delivered.</td>
+	<td style="text-align:left;">OLYCameraTakingProgressBeginCapturing</td>
+	<td style="text-align:left;">BeginCapturing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Finish Capturing<br> Streaming live view resumes immediately after this event occurs. Event to notify resuming live view is not delivered.</td>
+	<td style="text-align:left;">OLYCameraTakingProgressEndCapturing</td>
+	<td style="text-align:left;">EndCapturing</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Finish Taking Picture</td>
+	<td style="text-align:left;">OLYCameraTakingProgressFinished</td>
+	<td style="text-align:left;">Finished</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h4 id="exampleofuserinterfaceaccordingtoprogressnotification">Example of User Interface according to Progress Notification</h4>
+
+<p>Here is an example of user interface for your application when receiving progress notification.</p>
+<div class="table-desc-2">
+
+<table>
+<colgroup>
+<col style="text-align:left;"/>
+<col style="text-align:left;"/>
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;">Progress Notification</th>
+	<th style="text-align:left;">User Interface Example</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Start Auto Focusing</td>
+	<td style="text-align:left;">Do nothing. If AF frame is set for touch AF etc., keep AF frame displayed in the same position.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Finish Auto Focusing</td>
+	<td style="text-align:left;">Draw AF frame at the focusing point. If focusing succeeded, frame color should change to green. Otherwise, red. Play sound effect according to the result of focusing.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Ready to Capture</td>
+	<td style="text-align:left;">Do nothing.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Start Capturing</td>
+	<td style="text-align:left;">Play sound effect of shutter. Disable shutter operation, and change display to inform disabled status. Overlay translucent colored layer over live view image for example. Then display information to notify taking picture is in progress. Show animated icon or indicator for example.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Finish Taking Picture</td>
+	<td style="text-align:left;">Do nothing. Next operation is enabled.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<h3 id="handlerforcompletionnotification">Handler for Completion Notification</h3>
+
+<p>Called when process is finished. Result of processing generally is provided simultaneously. See API reference for more details.</p>
+
+<h3 id="handlerforerrornotification">Handler for Error Notification</h3>
+
+<p>Called only when error occurs. The following are major cases where error notification is handled.</p>
+
+<ul>
+<li>Network is disconnected.</li>
+<li>Specified mode is invalid.</li>
+<li>Specified parameter is invalid.</li>
+<li>Received a control command when the same command is being executed.</li>
+<li>Processing failed, e.g., event to be notified cannot be received.</li>
+</ul>
+
+<!---------------------------------------------------------->
+<!--CONTENTS TO HERE-->
+<!---------------------------------------------------------->
+
+</div>
+</body>
+<script type="text/javascript" src="../js/footer.js"></script>
+
+</html>
